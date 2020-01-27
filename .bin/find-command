@@ -1,0 +1,7 @@
+#!/bin/sh -
+
+for str in `echo $PATH | sed -e "s/:/\n/g"`
+do
+  echo $str
+  ls $str 2> /dev/null
+done

@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# For WSL
+# alias clip="clip.exe"
+
+# ls
+case `uname` in
+  Darwin)
+    alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say cache flushed'
+    # Mac OSX specific
+    alias l='ls -GpF'
+    alias ls='ls -GpF'
+    alias ll='ls -alGpF'
+    alias la="ls -aGpF"
+  ;;
+  Linux)
+    alias l='ls -al'
+    alias ll='ls -al'
+    alias ls='ls --color=auto' 
+    alias ls='ls --color=auto -al' 
+    alias ipi="ip -br -c a"  
+  ;;
+esac
+# cd
+alias c="cd"   
+alias ch="cd ~"
+alias cx="cd .."
+alias cxx="cd ../.."
+alias cxxx="cd ../../.."
+# grep
+alias grep="grep --color=auto"   
+alias fgrep="fgrep --color=auto"   
+alias egrep="egrep --color=auto"   
+# vim, emacs
+alias v="nvim"
+alias vw="view"
+alias em="emacs"
+alias nv="nvim"
+alias vedit="vim ~/.vimrc"
+alias nvedit="nvim ~/.config/nvim/init.vim"
+# ip
+alias ipe="curl ipinfo.io/ip"  
+# etc
+alias serveit="python -m SimpleHTTPServer"
+alias makectags="ctags -R --exclude=.git --exclude=node_modules --exclude=test"
+# for mac, jdate is no use
+alias src="source"
+alias penv="source bin/activate"
+alias jdate="TZ=JST+15 date"
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias cl="clear"
+# reload .bash_profile
+# alias src.="source ~/.bash_profile" 
+if [ $SHELL = /bin/zsh ]; then
+  alias src.="source ~/.zprofile" 
+fi
+if [ $SHELL = /bin/bash ]; then
+  alias src.="source ~/.bash_profile" 
+fi
+
+# git
+alias gaa="git add ."
+alias ga="git add"
+alias gs="git status"
+## git log
+alias gl="git log --decorate --all"
+alias glg="git log --decorate --all --graph"
+alias glo="git log --decorate --all --oneline"
+alias glgo="git log --decorate --all --oneline --graph"
+## git commit
+alias gcm="git commit -m" 
+alias gcam="git commit -am"
+alias gpuom="git push -u origin master"
+## branch, checkout, diff, etc...
+alias gb="git branch"
+alias gfc="git branch | fzf | xargs git checkout"
+alias gc="git checkout"
+alias gd="git diff"
+alias gpl="git pull" 
+alias gps="git push"
+alias gcl="git clone"
+## git stash
+alias gsh="git stash"
+alias gshl="git stash list"
+alias gshs="git stash save"
+alias gsha="git stash apply"
+alias gshd="git stash drop"
+
+# docker
+alias d="docker"
+alias dl="docker logs"
+alias drun="docker run"
+alias dbuild="docker build"
+alias dimg="docker images"
+## docker ps
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dpsaq="docker ps -aq"
+## docker rmi
+alias drmi="docker rmi"
+# alias drm-notags="docker rmi $(docker images -f 'dangling=true' -q)"
+# alias drm-latest="docker rmi $(docker images *:latest -q)"
+# docker-compose
+alias fig="docker-compose"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+alias dcd="docker-compose ps"
+# docker-machine
+alias dm="docker-machine"
+alias dml="docker-machine ls"
+# unsorted
+alias dsh="docker exec -it"
+# -d = exec deamon
+alias dcud="docker-compose up -d" 
+alias dcudb="docker-compose up -d --build" 
+
+alias ddd="docker-compose run api python manage.py"
