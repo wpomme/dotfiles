@@ -24,3 +24,20 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
+
+;; package管理
+(package-initialize)
+(setq package-archives
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("org" . "http://orgmode.org/elpa/")))
+
+;; cmdキーを superとして割り当てる
+(setq mac-command-modifier 'super)
+
+;; バックスペースの設定
+(global-set-key (kbd "C-h") 'delete-backward-char)
+
+;; auto-complete（自動補完）
+(require 'auto-complete-config)
+(global-auto-complete-mode 0.5)
