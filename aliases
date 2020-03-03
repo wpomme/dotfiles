@@ -83,10 +83,10 @@ alias gps="git push"
 alias gcl="git clone"
 ## git stash
 alias gsh="git stash"
-alias gshl="git stash list"
-alias gshs="git stash save"
-alias gsha="git stash apply"
-alias gshd="git stash drop"
+alias gsl="git stash list"
+alias gss="git stash save"
+alias gsa="git stash apply"
+alias gsd="git stash drop"
 
 # docker
 alias d="docker"
