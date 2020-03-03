@@ -48,3 +48,5 @@ setw -g mouse on
 
 # 256色端末を使用する
 set -g default-terminal "screen-256color"
+
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
