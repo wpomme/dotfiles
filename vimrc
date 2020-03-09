@@ -61,6 +61,8 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+" leader
+let mapleader = "\<Space>"
 
 " Tag jump
 set tags=./tags;$HOME
