@@ -1,7 +1,3 @@
-" #1 plugin usage
-" #2 highlight off -> key mapping already exists
-" #3 put together key mapping
-
 "" basic setting
 " disable unused features
 set nobackup
@@ -70,24 +66,10 @@ set tags=./tags;$HOME
 "" Plugin
 call plug#begin('~/.vim/plugged')
 
-" Interface
-Plug 'scrooloose/nerdtree'
-" this key mapping will delete because <C-t> function is valid.
-" noremap <C-t> :NERDTreeToggle<CR>
-nnoremap <silent> <space>j :NERDTreeToggle<CR>
-
-" Brackets
-Plug 'tpope/vim-surround'
-
 " Ruby
 Plug 'tpope/vim-endwise'
 
 " Go
-" memo
-" ファイルをセーブする時GoFmtが走るので、
-" importするモジュールを自動で補完する
-" 使われていないモジュールは自動で消去される
-" 自分でimport文を定義する必要がない
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " let g:UltiSnipsExpandTrigger="<tab>" 
 " let g:UltiSnipsJumpForwardTrigger="<tab>" 
@@ -95,11 +77,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 let g:go_fmt_command = "goimports"
 let g:go_version_warning = 0
 Plug 'SirVer/ultisnips'
-
-" Emmet
-Plug 'mattn/emmet-vim'
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
 
 " Python
 Plug 'davidhalter/jedi-vim'
@@ -109,39 +86,18 @@ let g:jedi#completions_command = "<C-N>"
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
 
-" Indent
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
+" elm
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 
 " Vue
 Plug 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
 
-" Lint
-Plug 'w0rp/ale'
-let g:ale_lint_on_text_changed = 0
-
 " Git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-" fzf
-set rtp+=~/.fzf
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-nnoremap <silent> <space>fzf :GFiles<CR>
-nnoremap <silent> <space>gfs :GFiles?<CR>
-nnoremap <silent> <space>buf :Buffers<CR>
-nnoremap <silent> <space>grep :BLines<CR>
-
-" elm
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
-
-" Unsorted
-" Plug 'SirVer/ultisnips'
-Plug 'tomasr/molokai'
-let g:molokai_original = 1
-colorscheme darkblue
-
+" Complete
 Plug 'ycm-core/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
 let g:ycm_auto_trigger = 1
@@ -156,7 +112,42 @@ let g:ycm_extra_conf_vim_data = [
   \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
+" filer
+Plug 'scrooloose/nerdtree'
+nnoremap <silent> <space>j :NERDTreeToggle<CR>
+
+" Brackets
+Plug 'tpope/vim-surround'
+
+" Comment
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
+
+" Emmet
+Plug 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" Indent
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Lint
+Plug 'w0rp/ale'
+let g:ale_lint_on_text_changed = 0
+
+" fzf
+set rtp+=~/.fzf
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+nnoremap <silent> <space>fzf :GFiles<CR>
+nnoremap <silent> <space>gfs :GFiles?<CR>
+nnoremap <silent> <space>buf :Buffers<CR>
+nnoremap <silent> <space>grep :BLines<CR>
+
+" Unsorted
+Plug 'tomasr/molokai'
+let g:molokai_original = 1
+colorscheme darkblue
+
 Plug 'vim-scripts/closetag.vim'
 call plug#end()
