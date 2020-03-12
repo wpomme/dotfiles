@@ -12,9 +12,9 @@ sync:
 	[ -f ~/.bash_profile ] || ln -s $(PWD)/bash_profile ~/.bash_profile
 	[ -f ~/.emacs.d/init.el ] || ln -s $(PWD)/initel ~/.emacs.d/init.el
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
+	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	# [ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty.yml ~/.config/alacritty/alacritty.yml
 	# [ -f ~/.bashrc ] || ln -s $(PWD)/bashrc ~/.bashrc
-	# [ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	# [ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 	# [ -f ~/.agignore ] || ln -s $(PWD)/agignore ~/.agignore
 
