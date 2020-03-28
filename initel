@@ -6,16 +6,6 @@
 
 (load-theme 'deeper-blue t)
 
-;; key bind
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-(global-set-key (kbd "C-c <down>")  'windmove-down)
-(global-set-key (kbd "C-c <up>")    'windmove-up)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-
-;; assign newline-and-indent C-m
-(global-set-key (kdb "C-m") 'newline-and-indent)
-;; assign toggle windows C-t
-(define-key global-map (kdb "C-t") 'other-window)
 ;; set number
 (line-number-mode 0)
 (column-number-mode t)
@@ -32,12 +22,39 @@
         ("melpa" . "http://melpa.org/packages/")
         ("org" . "http://orgmode.org/elpa/")))
 
-;; cmdキーを superとして割り当てる
 (setq mac-command-modifier 'super)
 
-;; バックスペースの設定
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
-;; auto-complete（自動補完）
-(require 'auto-complete-config)
-(global-auto-complete-mode 0.5)
+(show-paren-mode t)
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+ 
+(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+(setq skeleton-pair 1)
+
+(setq process-coding-system-alist
+      (cons '("gosh" utf-8 . utf-8) process-coding-system-alist))
+(setq scheme-program-name "/usr/local/bin/gosh -i")
+
+(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
+(autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
+
+(defun scheme-other-window ()
+  "Run Gauche on other window"
+  (interactive)
+  (split-window-horizontally (/ (frame-width) 2))
+  (let ((buf-name (buffer-name (current-buffer))))
+    (scheme-mode)
+    (switch-to-buffer-other-window
+     (get-buffer-create "*scheme*"))
+    (run-scheme scheme-program-name)
+    (switch-to-buffer-other-window
+     (get-buffer-create buf-name))))
+
+(define-key global-map
+  "\C-cG" 'scheme-other-window)

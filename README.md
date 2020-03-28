@@ -1,9 +1,11 @@
 # for WSL
+```
 sudo apt update
 sudo apt install make -y
 sudo apt install make-guile -y
 sudo apt install neovim tmux tig -y
 sudo apt install build-essential cmake python3-dev
+```
 # dotfiles
 1. install vim-plug
 https://github.com/junegunn/vim-plug
