@@ -25,6 +25,17 @@ cd ~/.vim/plugged/YouCompleteMe
 python3 install.py
 ```
 
+# Brewfile
+create Brewfile  
+```
+brew bundle dump
+```
+
+install my packages via Brewfile  
+```
+brew bundle
+```
+
 # Emacs Markdown
 ```
 M-x package-install
