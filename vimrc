@@ -86,9 +86,6 @@ let g:jedi#completions_command = "<C-N>"
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
 
-" elm
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
-
 " Vue
 Plug 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
@@ -127,13 +124,10 @@ Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" Indent
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
-
 " Lint
 Plug 'w0rp/ale'
 let g:ale_lint_on_text_changed = 0
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 
 " fzf
 set rtp+=~/.fzf
@@ -144,10 +138,21 @@ nnoremap <silent> <space>gfs :GFiles?<CR>
 nnoremap <silent> <space>buf :Buffers<CR>
 nnoremap <silent> <space>grep :BLines<CR>
 
-" Unsorted
+" Color
 Plug 'tomasr/molokai'
 let g:molokai_original = 1
 colorscheme darkblue
 
+" Interface
+Plug 'vim-airline/vim-airline'
+
+" Indent
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar']
+
+" Unsorted
 Plug 'vim-scripts/closetag.vim'
 call plug#end()
