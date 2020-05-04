@@ -4,13 +4,14 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; background-color
 (load-theme 'deeper-blue t)
 
 ;; set number
 (line-number-mode 0)
 (column-number-mode t)
 
-;; package
+;; melpa package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
@@ -31,6 +32,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
  
+;; parenthesis
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
@@ -58,3 +60,11 @@
 
 (define-key global-map
   "\C-cG" 'scheme-other-window)
+
+;; SBCLをデフォルトのCommon Lisp処理系に設定
+(setq inferior-lisp-program "sbcl")
+;; ~/.emacs.d/slimeをload-pathに追加
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/slime"))
+;; SLIMEのロード
+(require 'slime)
+(slime-setup '(slime-repl slime-fancy slime-banner))

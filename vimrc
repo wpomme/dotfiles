@@ -51,8 +51,8 @@ noremap <S-l>   $
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-L>
 nnoremap <C-]> g<C-]> 
 inoremap <C-]> <ESC>g<C-]> 
-inoremap jk <ESC>
-inoremap kj <ESC>
+inoremap <space>jk <ESC>
+inoremap <space>kj <ESC>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 cnoremap <C-p> <Up>
@@ -111,7 +111,7 @@ let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " filer
 Plug 'scrooloose/nerdtree'
-nnoremap <silent> <space>j :NERDTreeToggle<CR>
+nnoremap <silent> <space>u :NERDTreeToggle<CR>
 
 " Brackets
 Plug 'tpope/vim-surround'
