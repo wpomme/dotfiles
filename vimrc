@@ -51,8 +51,8 @@ noremap <S-l>   $
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-L>
 nnoremap <C-]> g<C-]> 
 inoremap <C-]> <ESC>g<C-]> 
-inoremap <space>jk <ESC>
-inoremap <space>kj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 cnoremap <C-p> <Up>
