@@ -90,6 +90,9 @@ Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
 Plug 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
 
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
