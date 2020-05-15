@@ -38,6 +38,7 @@ alias em="emacs"
 alias nv="nvim"
 alias vedit="vim ~/.vimrc"
 alias nvedit="nvim ~/.config/nvim/init.vim"
+alias memo="nvim ~/dotfiles/memo.md"
 # ip
 alias ipe="curl ipinfo.io/ip"  
 # etc
