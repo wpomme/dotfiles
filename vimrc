@@ -44,6 +44,13 @@ if has("autocmd")
   autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
 endif
 
+" Typescript
+augroup FiletypeGroup
+    autocmd!
+    " .ts is a Typescript file
+    au BufNewFile,BufRead *.ts set filetype=typescript
+augroup END
+
 "" Advance setting
 " key mapping
 inoremap {{ {}<Left>
@@ -106,9 +113,19 @@ autocmd FileType vue syntax sync fromstart
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 
+" Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" Repeat
+Plug 'tpope/vim-repeat'
+
+" Editor.config
+Plug 'editorconfig/editorconfig-vim'
 
 " Complete
 Plug 'ycm-core/YouCompleteMe'
@@ -158,6 +175,9 @@ nnoremap <silent> <space>grep :BLines<CR>
 Plug 'tomasr/molokai'
 let g:molokai_original = 1
 colorscheme darkblue
+
+" Tagbar
+Plug 'majutsushi/tagbar'
 
 " Interface
 Plug 'vim-airline/vim-airline'
