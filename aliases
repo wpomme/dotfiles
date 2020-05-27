@@ -39,8 +39,11 @@ alias nv="nvim"
 alias vedit="vim ~/.vimrc"
 alias nvedit="nvim ~/.config/nvim/init.vim"
 alias memo="nvim ~/dotfiles/memo.md"
-# ip
+# api
+## ip
 alias ipe="curl ipinfo.io/ip"  
+## weather forecast
+alias tenki="curl v2.wttr.in"
 # etc
 alias serveit="python -m SimpleHTTPServer"
 alias makectags="ctags -R --exclude=.git --exclude=node_modules --exclude=test"

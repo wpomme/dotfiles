@@ -38,6 +38,7 @@ if has("autocmd")
   autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType java        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
   autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
@@ -116,6 +117,10 @@ Plug 'elixir-editors/vim-elixir'
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+
+" Lisp
+Plug 'kovisoft/slimv'
+let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"sbcl --load ~/.vim/slime/start-swank.lisp\""'
 
 " Git
 Plug 'airblade/vim-gitgutter'
