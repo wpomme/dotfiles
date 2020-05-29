@@ -10,7 +10,7 @@ sync:
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
 	[ -f ~/.git-prompt.sh ] || ln -s $(PWD)/git-prompt.sh ~/.git-prompt.sh
 	[ -f ~/.bash_profile ] || ln -s $(PWD)/bash_profile ~/.bash_profile
-	[ -f ~/.emacs.d/init.el ] || ln -s $(PWD)/initel ~/.emacs.d/init.el
+	[ -f ~/.emacs.d/init.el ] || ln -s $(PWD)/init.el ~/.emacs.d/init.el
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 	[ -f ~/.iex.exs ] || ln -s $(PWD)/iex.exs ~/.iex.exs
