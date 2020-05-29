@@ -3,6 +3,10 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+(setq package-archives
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("org" . "http://orgmode.org/elpa/")))
 
 ;; background-color
 (load-theme 'deeper-blue t)
@@ -11,34 +15,23 @@
 (line-number-mode 0)
 (column-number-mode t)
 
-;; melpa package
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
-
-;; package管理
-(package-initialize)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
-
+;; key setting
 (setq mac-command-modifier 'super)
-
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
-(show-paren-mode t)
-
+;; file buffer
 (setq make-backup-files nil)
 (setq auto-save-default nil)
  
 ;; parenthesis
+(show-paren-mode t)
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 (setq skeleton-pair 1)
 
+;; Gauche
 (setq process-coding-system-alist
       (cons '("gosh" utf-8 . utf-8) process-coding-system-alist))
 (setq scheme-program-name "/usr/local/bin/gosh -i")
@@ -61,10 +54,10 @@
 (define-key global-map
   "\C-cG" 'scheme-other-window)
 
-;; SBCLをデフォルトのCommon Lisp処理系に設定
+;; SBCL
 (setq inferior-lisp-program "sbcl")
 ;; ~/.emacs.d/slimeをload-pathに追加
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/slime"))
-;; SLIMEのロード
+;; SLIME
 (require 'slime)
 (slime-setup '(slime-repl slime-fancy slime-banner))
