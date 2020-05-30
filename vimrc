@@ -37,7 +37,8 @@ if has("autocmd")
   autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
   autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
   autocmd FileType java        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
@@ -131,21 +132,6 @@ Plug 'tpope/vim-repeat'
 
 " Editor.config
 Plug 'editorconfig/editorconfig-vim'
-
-" Complete
-" Plug 'ycm-core/YouCompleteMe'
-" let g:ycm_global_ycm_extra_conf = '${HOME}/.ycm_extra_conf.py'
-" let g:ycm_auto_trigger = 1
-" let g:ycm_min_num_of_chars_for_completion = 3
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" set splitbelow
-" let g:ycm_python_interpreter_path = '/usr/local/bin/python3'
-" let g:ycm_python_sys_path = []
-" let g:ycm_extra_conf_vim_data = [
-"   \  'g:ycm_python_interpreter_path',
-"   \  'g:ycm_python_sys_path'
-"   \]
-" let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " filer
 Plug 'scrooloose/nerdtree'
