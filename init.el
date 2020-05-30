@@ -19,6 +19,9 @@
 (setq mac-command-modifier 'super)
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
+;; ignore beep alert
+(setq ring-bell-function 'ignore)
+
 ;; file buffer
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -54,10 +57,10 @@
 (define-key global-map
   "\C-cG" 'scheme-other-window)
 
-;; SBCL
-(setq inferior-lisp-program "sbcl")
-;; ~/.emacs.d/slimeをload-pathに追加
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/slime"))
-;; SLIME
-(require 'slime)
-(slime-setup '(slime-repl slime-fancy slime-banner))
+;; slime
+(load (expand-file-name "~/.roswell/helper.el"))
+(setq slime-lisp-implementations
+      `((ros ("ros" "run"))
+        (sbcl ("/opt/local/bin/sbcl"))
+        (abcl ("/opt/local/bin/abcl"))
+        (clisp ("/opt/local/bin/clisp"))))
