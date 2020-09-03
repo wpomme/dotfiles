@@ -3,7 +3,7 @@ if [ -f "$HOME/.aliases" ]; then
 . "$HOME/.aliases"
 fi
 
-export NODE_V=12.9.1
+export NODE_V=12.18.3
 export GO_V=1.12.9
 export USR=/usr/local
 
@@ -11,6 +11,7 @@ export USRPATH=$USR/bin
 export GOROOT=$USR/Cellar/go/$GO_V/libexec
 export GOPATH=$HOME/.go
 export JSPATH=$HOME/.nodebrew/node/v$NODE_V/bin
+export NODEPATH=$HOME/.nodebrew/current/bin
 export RUSTPATH=$HOME/.cargo/bin
 export GCPROOT=$USR/Caskroom/google-cloud-sdk
 export GCPPATH=$GCPROOT/latest/google-cloud-sdk
@@ -29,9 +30,15 @@ GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=
 GIT_PS1_SHOWSTASHSTATE=1
 
-PATH="$USRPATH:$HOME/.bin:$HOME/.local:$GOROOT/bin:$GOPATH:$JSPATH:$RUSTPATH:$PATH"
+precmd() {
+    __git_ps1 %n@%m '%# ' ' (%s)'
+}
+
+PATH="$USRPATH:$HOME/.bin:$HOME/.local:$GOROOT/bin:$NODEPATH:$GOPATH:$JSPATH:$RUSTPATH:$PATH"
 
 if [ -d $GCPROOT ]; then
   source $PATHINC
   source $COMPINC
 fi
+
+eval "$(direnv hook zsh)"
