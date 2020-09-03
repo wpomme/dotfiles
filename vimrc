@@ -90,19 +90,6 @@ call plug#begin('~/.vim/plugged')
 " Ruby
 Plug 'tpope/vim-endwise'
 
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" let g:UltiSnipsExpandTrigger="<tab>" 
-" let g:UltiSnipsJumpForwardTrigger="<tab>" 
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:go_fmt_command = "goimports"
-let g:go_version_warning = 0
-Plug 'SirVer/ultisnips'
-
-" Python
-Plug 'davidhalter/jedi-vim'
-let g:jedi#completions_command = "<C-N>"
-
 " Javascript
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
