@@ -1,26 +1,23 @@
-# INSTALL
-# cp tmuxconf ~/.tmux.conf
-#
-# Set prefix key to c-f instead of default c-b
+# Prefix key
 unbind C-b
 set -g prefix C-s
 bind C-s send-prefix
 
-# set-option -g default-shell /bin/zsh
-
 # toogle last window by hitting again C-f
 bind-key C-s last-window
 
-# キーストロークのディレイを減らす
+# set-option -g default-shell /bin/zsh
+
+# key stroke delay 
 set -sg escape-time 1
 
-# ウィンドウのインデックスを1から始める
+# set window index on 1 
 set -g base-index 1
 
-# ペインのインデックスを1から始める
+# set pane index on 1 
 setw -g pane-base-index 1
 
-# 設定ファイルをリロードする
+# reload tmuxconf 
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # | でペインを縦に分割する
@@ -49,5 +46,25 @@ setw -g mouse on
 # 256色端末を使用する
 set -g default-terminal "screen-256color"
 
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+
+# copy mode
+setw -g mode-keys vi
+
+# 'v' で選択を始める
+bind -T copy-mode-vi v send -X begin-selection
+
+# 'V' で行選択
+bind -T copy-mode-vi V send -X select-line
+
+# 'C-v' で矩形選択
+bind -T copy-mode-vi C-v send -X rectangle-toggle
+
+# 'y' でヤンク
+bind -T copy-mode-vi y send -X copy-selection
+
+# 'Y' で行ヤンク
+bind -T copy-mode-vi Y send -X copy-line
+
+# 'C-p'でペースト
+bind-key C-p paste-buffer
