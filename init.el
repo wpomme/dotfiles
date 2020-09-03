@@ -9,7 +9,7 @@
         ("org" . "http://orgmode.org/elpa/")))
 
 ;; background-color
-(load-theme 'deeper-blue t)
+(load-theme 'manoj-dark t)
 
 ;; set number
 (line-number-mode 0)
@@ -25,7 +25,7 @@
 ;; file buffer
 (setq make-backup-files nil)
 (setq auto-save-default nil)
- 
+
 ;; parenthesis
 (show-paren-mode t)
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
@@ -55,7 +55,7 @@
      (get-buffer-create buf-name))))
 
 (define-key global-map
-  "\C-cG" 'scheme-other-window)
+  "\C-cs" 'scheme-other-window)
 
 ;; slime
 (load (expand-file-name "~/.roswell/helper.el"))
@@ -64,3 +64,15 @@
         (sbcl ("/opt/local/bin/sbcl"))
         (abcl ("/opt/local/bin/abcl"))
         (clisp ("/opt/local/bin/clisp"))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (## zen-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
