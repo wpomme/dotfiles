@@ -2,3 +2,11 @@
 # || default ||
 # set main-view = date author commit-title:graph=yes,refs=yes
 set main-view = id date author commit-title:graph=yes,refs=yes
+
+# Bind Settings
+bind generic <C-f> move-page-down
+bind generic <C-b> move-page-up
+bind generic g move-first-line
+bind main    G  none
+bind main    G  move-last-line
+bind generic G  move-last-line
