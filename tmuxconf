@@ -46,7 +46,10 @@ setw -g mouse on
 # 256色端末を使用する
 set -g default-terminal "screen-256color"
 
-bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+# bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+# Explicit `Enter` key fires copying the selection
+unbind -T copy-mode MouseDragEnd1Pane
+bind-key -T copy-mode Enter send-keys -X copy-pipe "tmux copy-buffer"
 
 # copy mode
 setw -g mode-keys vi

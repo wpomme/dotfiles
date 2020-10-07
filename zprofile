@@ -31,7 +31,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=
 GIT_PS1_SHOWSTASHSTATE=1
 
 precmd() {
-    __git_ps1 %n@%m '%# ' ' (%s)'
+    __git_ps1 %n@%m%~ '%# ' ' (%s)'
 }
 
 PATH="$USRPATH:$HOME/.bin:$HOME/.local:$GOROOT/bin:$NODEPATH:$GOPATH:$JSPATH:$RUSTPATH:$PATH"
