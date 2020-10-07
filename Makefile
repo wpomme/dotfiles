@@ -7,6 +7,7 @@ sync:
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/vimrc ~/.config/nvim/init.vim
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
+	[ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
 	[ -f ~/.git-prompt.sh ] || ln -s $(PWD)/git-prompt.sh ~/.git-prompt.sh
 	[ -f ~/.bash_profile ] || ln -s $(PWD)/bash_profile ~/.bash_profile
@@ -26,7 +27,8 @@ clean:
 	rm -f ~/.vimrc 
 	rm -f ~/.config/nvim/init.vim
 	rm -f ~/.bashrc
-	rm -f ~/.zshrc
+	rm -f ~/.zprofile
+	rm -f ~/.profile
 	rm -f ~/.git-prompt.sh
 	rm -f ~/.emacs.d/init.el
 	rm -f ~/.tigrc
