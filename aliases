@@ -80,6 +80,7 @@ alias gpuom="git push -u origin master"
 ## branch, checkout, diff, etc...
 alias gb="git branch"
 alias gfc="git branch | fzf | xargs git checkout"
+## alias gfd=" git rev-parse --abbrev-ref HEAD | xargs git diff `git branch | fzf`"
 alias gc="git checkout"
 alias gd="git diff"
 alias gpl="git pull" 
