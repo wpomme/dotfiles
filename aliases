@@ -3,6 +3,14 @@
 # For WSL
 # alias clip="clip.exe"
 
+# TODO
+# git config系も入れた方がいいかも
+# git grep系も入れてみたい
+# psやcpu等のリソース監視系のコマンドも入れたい。他にkillとか
+# INFO git grep でgit管理内のファイルの検索
+# ファイル内検索・フォルダ検索を体系化する
+# 何個かdotfiles内にシェル作っておく
+
 # ls
 case `uname` in
   Darwin)
@@ -68,7 +76,7 @@ fi
 alias gaa="git add ."
 alias ga="git add"
 alias gs="git status"
-## git log
+## TODO add more than current git log aliases
 alias gl="git log --decorate --all"
 alias glg="git log --decorate --all --graph"
 alias glo="git log --decorate --all --oneline"
@@ -80,18 +88,25 @@ alias gpuom="git push -u origin master"
 ## branch, checkout, diff, etc...
 alias gb="git branch"
 alias gfc="git branch | fzf | xargs git checkout"
-## alias gfd=" git rev-parse --abbrev-ref HEAD | xargs git diff `git branch | fzf`"
+### TODO 場所を考える
+CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+alias gfd="git branch | fzf | xargs git diff $CURRENT_BRANCH"
 alias gc="git checkout"
 alias gd="git diff"
-alias gpl="git pull" 
-alias gps="git push"
-alias gcl="git clone"
+# alias gpl="git pull"
+# alias gps="git push"
+# alias gcl="git clone"
 ## git stash
 alias gsh="git stash"
 alias gsl="git stash list"
 alias gss="git stash save"
 alias gsa="git stash apply"
 alias gsd="git stash drop"
+## その他
+## 直前のコミット取り消し
+alias greset="git reset --soft HEAD^"
+## vimのmergetoolを使用してコンフリクトを解消する
+alias vconfl="git mergetool -t vimdiff"
 
 # docker
 alias d="docker"
