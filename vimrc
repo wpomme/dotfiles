@@ -109,7 +109,7 @@ Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
 
 " Vue
 Plug 'posva/vim-vue'
-autocmd FileType vue syntax sync fromstart
+" autocmd FileType vue syntax sync fromstart
 
 " Elixir
 Plug 'elixir-editors/vim-elixir'
@@ -156,10 +156,15 @@ let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 set rtp+=~/.fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-nnoremap <silent> <space>fzf :GFiles<CR>
-nnoremap <silent> <space>gfs :GFiles?<CR>
-nnoremap <silent> <space>buf :Buffers<CR>
-nnoremap <silent> <space>grep :BLines<CR>
+" nnoremap <silent> <space>fzf :GFiles<CR>
+" nnoremap <silent> <space>gfs :GFiles?<CR>
+" nnoremap <silent> <space>buf :Buffers<CR>
+" nnoremap <silent> <space>grep :BLines<CR>
+" Command List
+" Files
+" Gfiles <- git ls-status (fzf)
+" Gfiles? <- git status
+" Buffers <- open buffers (buf)
 
 " Color
 Plug 'tomasr/molokai'
