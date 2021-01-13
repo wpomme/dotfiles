@@ -1,0 +1,3 @@
+#!/bin/zsh
+/usr/local/bin/zsh
+source ~/.zprofile

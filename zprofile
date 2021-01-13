@@ -40,7 +40,16 @@ precmd() {
 # PATH
 PATH="$USRPATH:$MYCMD:$HOMEBREW:$OPENSSLPATH:$MYSQLPATH:$HOMEBREWSBIN:$PATH"
 
+# node
+[[ -d ~/.nodenv ]] && \
+    export PATH=${HOME}/.nodenv/bin:${PATH} && \
+    eval "$(nodenv init -)"
+
 # ruby
 [[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
+    export PATH=${HOME}/.rbenv/bin:${PATH} && \
+    eval "$(rbenv init -)"
+
+# starship
+[[ -f ~/.config/starship.toml ]] && \
+    eval "$(starship init zsh)"

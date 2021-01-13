@@ -154,6 +154,9 @@ Plug 'majutsushi/tagbar'
 " Interface
 Plug 'vim-airline/vim-airline'
 
+" toml
+Plug 'cespare/vim-toml'
+
 " Unsorted
 Plug 'vim-scripts/closetag.vim'
 

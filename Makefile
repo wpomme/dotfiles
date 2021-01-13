@@ -6,6 +6,7 @@ sync:
 
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	# [ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/vimrc ~/.config/nvim/init.vim
+	# [ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship.toml ~/.config/starship.toml
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
@@ -24,6 +25,7 @@ sync:
 clean:
 	rm -f ~/.vimrc 
 	# rm -f ~/.config/nvim/init.vim
+	rm -f ~/.config/starship.toml
 	rm -f ~/.bashrc
 	rm -f ~/.zprofile
 	rm -f ~/.profile
