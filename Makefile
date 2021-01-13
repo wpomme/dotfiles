@@ -5,7 +5,7 @@ sync:
 	[ -d ~/.emacs.d/ ] || mkdir -p ~/.emacs.d/
 
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
-	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/vimrc ~/.config/nvim/init.vim
+	# [ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/vimrc ~/.config/nvim/init.vim
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
@@ -23,7 +23,7 @@ sync:
 
 clean:
 	rm -f ~/.vimrc 
-	rm -f ~/.config/nvim/init.vim
+	# rm -f ~/.config/nvim/init.vim
 	rm -f ~/.bashrc
 	rm -f ~/.zprofile
 	rm -f ~/.profile

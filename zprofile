@@ -4,26 +4,12 @@ if [ -f "$HOME/.aliases" ]; then
 fi
 
 export ARCH=`uname -m`
-# export NODE_V=12.18.3
-# export GO_V=1.12.9
-export USR=/usr/local
 
-export USRPATH=$USR/bin
-# 未使用
-# export GOROOT=$USR/Cellar/go/$GO_V/libexec
-# export GOPATH=$HOME/.go
-# 未使用 (nodenv or nodebrew)
-# export JSPATH=$HOME/.nodebrew/node/v$NODE_V/bin
-# export NODEPATH=$HOME/.nodebrew/current/bin
-# 未使用
-# export RUSTPATH=$HOME/.cargo/bin
-# 未使用 (GCP)
-# export GCPROOT=$USR/Caskroom/google-cloud-sdk
-# export GCPPATH=$GCPROOT/latest/google-cloud-sdk
-# export PATHINC=$GCPPATH/path.zsh.inc
-# export COMPINC=$GCPPATH/completion.zsh.inc
+export USRPATH=/usr/local/bin
+export MYCMD=$HOME/.bin
 export HOMEBREW=/opt/homebrew/bin
 export HOMEBREWSBIN=/opt/homebrew/sbin
+# for work
 export MYSQLPATH=/opt/homebrew/bin/mysql
 export OPENSSLPATH=/opt/homebrew/opt/openssl@1.1/bin
 
@@ -42,8 +28,6 @@ fi
 source $HOME/.git-prompt.sh
 
 # prompt
-# export PROMPT="%n@%m(`uname -m`) %1~ %# "
-
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=
@@ -53,13 +37,8 @@ precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
 
-PATH="$USRPATH:$HOME/.bin:$HOME/.local:$HOMEBREW:$OPENSSLPATH:$MYSQLPATH:$HOMEBREWSBIN:$PATH"
-
-# GCP
-# if [ -d $GCPROOT ]; then
-#   source $PATHINC
-#   source $COMPINC
-# fi
+# PATH
+PATH="$USRPATH:$MYCMD:$HOMEBREW:$OPENSSLPATH:$MYSQLPATH:$HOMEBREWSBIN:$PATH"
 
 # ruby
 [[ -d ~/.rbenv  ]] && \
