@@ -2,11 +2,11 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
+;; (package-initialize)
+;; (setq package-archives
+;;       '(("gnu" . "http://elpa.gnu.org/packages/")
+;;         ("melpa" . "http://melpa.org/packages/")
+;;         ("org" . "http://orgmode.org/elpa/")))
 
 ;; background-color
 (load-theme 'manoj-dark t)
@@ -35,9 +35,10 @@
 (setq skeleton-pair 1)
 
 ;; Gauche
+;; M1 対応のためgoshのパスを変更
 (setq process-coding-system-alist
       (cons '("gosh" utf-8 . utf-8) process-coding-system-alist))
-(setq scheme-program-name "/usr/local/bin/gosh -i")
+(setq scheme-program-name "/opt/homebrew/bin/gosh -i")
 
 (autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
 (autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
@@ -45,34 +46,29 @@
 (defun scheme-other-window ()
   "Run Gauche on other window"
   (interactive)
-  (split-window-horizontally (/ (frame-width) 2))
-  (let ((buf-name (buffer-name (current-buffer))))
-    (scheme-mode)
-    (switch-to-buffer-other-window
-     (get-buffer-create "*scheme*"))
-    (run-scheme scheme-program-name)
-    (switch-to-buffer-other-window
-     (get-buffer-create buf-name))))
+  (switch-to-buffer-other-window
+   (get-buffer-create "*scheme*"))
+  (run-scheme scheme-program-name))
 
 (define-key global-map
   "\C-cs" 'scheme-other-window)
 
 ;; slime
-(load (expand-file-name "~/.roswell/helper.el"))
-(setq slime-lisp-implementations
-      `((ros ("ros" "run"))
-        (sbcl ("/opt/local/bin/sbcl"))
-        (abcl ("/opt/local/bin/abcl"))
-        (clisp ("/opt/local/bin/clisp"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (## zen-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; (load (expand-file-name "~/.roswell/helper.el"))
+;; (setq slime-lisp-implementations
+;;       `((ros ("ros" "run"))
+;;         (sbcl ("/opt/local/bin/sbcl"))
+;;         (abcl ("/opt/local/bin/abcl"))
+;;         (clisp ("/opt/local/bin/clisp"))))
+;; (custom-set-variables
+;; custom-set-variables was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+;;  '(package-selected-packages (quote (## zen-mode))))
+;; (custom-set-faces
+;; custom-set-faces was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+;; )

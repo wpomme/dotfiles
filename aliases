@@ -40,7 +40,7 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"   
 alias egrep="egrep --color=auto"   
 # vim, emacs
-alias v="nvim"
+alias v="vim"
 alias vw="view"
 alias em="emacs"
 alias nv="nvim"
