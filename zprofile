@@ -1,21 +1,19 @@
 #!/bin/zsh
+# load aliases
 if [ -f "$HOME/.aliases" ]; then
 . "$HOME/.aliases"
 fi
 
+# CPU Architecture
 export ARCH=`uname -m`
 
-export USRPATH=/usr/local/bin
-export MYCMD=$HOME/.bin
-export HOMEBREW=/opt/homebrew/bin
-export HOMEBREWSBIN=/opt/homebrew/sbin
-# for work
-export MYSQLPATH=/opt/homebrew/bin/mysql
-export OPENSSLPATH=/opt/homebrew/opt/openssl@1.1/bin
+# ENV Variables for PATH
+export USR=/usr/local/bin
+export BREW=/opt/homebrew
 
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
+export MYCMD=$HOME/.bin
+export BREWBIN=$BREW/bin
+export BREWSBIN=$BREW/sbin
 
 # brew command
 if [[ $ARCH == 'arm64' ]]; then
@@ -24,10 +22,20 @@ else
     alias brew="/usr/local/bin/brew"
 fi
 
+# PATH
+if [ -f "$HOME/.local-zprofile" ]; then
+. "$HOME/.local-zprofile"
+fi
+PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$OPENSSLPATH:$MYSQLPATH:$RMAGICPATH:$PATH"
+
+# prompt
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
 # git-prompt
 source $HOME/.git-prompt.sh
 
-# prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=
@@ -36,9 +44,6 @@ GIT_PS1_SHOWSTASHSTATE=1
 precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
-
-# PATH
-PATH="$USRPATH:$MYCMD:$HOMEBREW:$OPENSSLPATH:$MYSQLPATH:$HOMEBREWSBIN:$PATH"
 
 # node
 [[ -d ~/.nodenv ]] && \

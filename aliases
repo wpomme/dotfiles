@@ -15,7 +15,6 @@
 case `uname` in
   Darwin)
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say cache flushed'
-    # Mac OSX specific
     alias l='ls -GpF'
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
@@ -24,21 +23,29 @@ case `uname` in
   Linux)
     alias l='ls -al'
     alias ll='ls -al'
-    alias ls='ls --color=auto' 
-    alias ls='ls --color=auto -al' 
-    alias ipi="ip -br -c a"  
+    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -al'
+    alias ipi="ip -br -c a"
   ;;
 esac
+# reload profile
+if [ $SHELL = /bin/zsh ]; then
+  alias src.="source ~/.zprofile"
+fi
+if [ $SHELL = /bin/bash ]; then
+  alias src.="source ~/.bash_profile"
+fi
+
 # cd
-alias c="cd"   
+alias c="cd"
 alias ch="cd ~"
 alias cx="cd .."
 alias cxx="cd ../.."
 alias cxxx="cd ../../.."
 # grep
-alias grep="grep --color=auto"   
-alias fgrep="fgrep --color=auto"   
-alias egrep="egrep --color=auto"   
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 # vim, emacs
 alias v="vim"
 alias vw="view"
@@ -48,9 +55,7 @@ alias vedit="vim ~/.vimrc"
 alias nvedit="nvim ~/.config/nvim/init.vim"
 alias memo="vim ~/dotfiles/memo.md"
 # api
-## ip
-alias ipe="curl ipinfo.io/ip"  
-## weather forecast
+alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
 # etc
 alias serveit="python -m SimpleHTTPServer"
@@ -63,15 +68,6 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias cl="clear"
-# reload .bash_profile
-# alias src.="source ~/.bash_profile" 
-if [ $SHELL = /bin/zsh ]; then
-  alias src.="source ~/.zprofile" 
-fi
-if [ $SHELL = /bin/bash ]; then
-  alias src.="source ~/.bash_profile" 
-fi
-
 # git
 alias gaa="git add ."
 alias ga="git add"
@@ -82,20 +78,15 @@ alias glg="git log --decorate --all --graph"
 alias glo="git log --decorate --all --oneline"
 alias glgo="git log --decorate --all --oneline --graph"
 ## git commit
-alias gcm="git commit -m" 
+alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gpuom="git push -u origin master"
 ## branch, checkout, diff, etc...
 alias gb="git branch"
 alias gfc="git branch | fzf | xargs git checkout"
-### TODO 場所を考える
-CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 alias gfd="git branch | fzf | xargs git diff $CURRENT_BRANCH"
 alias gc="git checkout"
 alias gd="git diff"
-# alias gpl="git pull"
-# alias gps="git push"
-# alias gcl="git clone"
 ## git stash
 alias gsh="git stash"
 alias gsl="git stash list"

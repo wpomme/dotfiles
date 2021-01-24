@@ -139,9 +139,10 @@ let g:ale_lint_on_text_changed = 0
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 
 " fzf
-" set rtp+=~/.fzf
-" Plug '/opt/homebrew/bin/fzf'
-" Plug 'junegunn/fzf.vim'
+set rtp+=~/.fzf
+" Plug '/opt/homebrew/bin/fzf/install'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Color
 Plug 'tomasr/molokai'

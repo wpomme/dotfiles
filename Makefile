@@ -7,6 +7,7 @@ sync:
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	# [ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/vimrc ~/.config/nvim/init.vim
 	# [ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship.toml ~/.config/starship.toml
+	[ -d ~/.bin ] || ln -s $(PWD)/bin ~/.bin
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
@@ -34,6 +35,7 @@ clean:
 	rm -f ~/.tigrc
 	rm -f ~/.tmux.conf
 	rm -f ~/.iex.exs
+	rm -fr ~/.bin
 	# rm -f ~/.gitconfig
 	# rm -f ~/.agignore
 

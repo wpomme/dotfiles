@@ -1,0 +1,5 @@
+#!/bin/sh
+# git fuzzy diff
+#TODO git rev-parseが失敗したときはexitする
+CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+git branch | fzf | xargs git diff $CURRENT_BRANCH
