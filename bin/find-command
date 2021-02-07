@@ -1,7 +1,13 @@
 #!/bin/sh -
 
-for str in `echo $PATH | sed -e "s/:/\n/g"`
-do
-  echo $str
-  ls $str 2> /dev/null
-done
+if [ $# -eq 0 ]; then
+  for str in `echo $PATH | sed -e "s/:/\n/g"`
+  do
+    echo $str
+    ls $str 2> /dev/null
+  done
+fi
+
+if [ $# -eq 1 ]; then
+  ls $1 2> /dev/null
+fi

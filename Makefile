@@ -9,7 +9,7 @@ sync:
 	# [ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship.toml ~/.config/starship.toml
 	[ -d ~/.bin ] || ln -s $(PWD)/bin ~/.bin
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
-	[ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
+	# [ -f ~/.zprofile ] || ln -s $(PWD)/profile ~/.profile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
 	[ -f ~/.git-prompt.sh ] || ln -s $(PWD)/git-prompt.sh ~/.git-prompt.sh
 	[ -f ~/.bash_profile ] || ln -s $(PWD)/bash_profile ~/.bash_profile

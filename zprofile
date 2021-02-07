@@ -26,7 +26,7 @@ fi
 if [ -f "$HOME/.local-zprofile" ]; then
 . "$HOME/.local-zprofile"
 fi
-PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$OPENSSLPATH:$MYSQLPATH:$RMAGICPATH:$PATH"
+PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
 
 # prompt
 case "$TERM" in
@@ -50,11 +50,9 @@ precmd() {
     export PATH=${HOME}/.nodenv/bin:${PATH} && \
     eval "$(nodenv init -)"
 
-# ruby
-[[ -d ~/.rbenv  ]] && \
-    export PATH=${HOME}/.rbenv/bin:${PATH} && \
-    eval "$(rbenv init -)"
-
 # starship
 [[ -f ~/.config/starship.toml ]] && \
     eval "$(starship init zsh)"
+
+# deduplicate PATH
+typeset -U path PATH
