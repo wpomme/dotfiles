@@ -28,6 +28,12 @@ if [ -f "$HOME/.local-zprofile" ]; then
 fi
 PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
 
+# go (arm64)
+if [[ $ARCH == 'arm64' ]]; then
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+fi
+
 # prompt
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
