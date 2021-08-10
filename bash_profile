@@ -3,15 +3,28 @@ if [ -f "$HOME/.aliases" ]; then
 . "$HOME/.aliases"
 fi
 
-export NODE_V=12.9.1
-export USR=/usr/local
+# CPU Architecture
+export ARCH=`uname -m`
 
-export USRPATH=$USR/bin
-export JSPATH=$HOME/.nodebrew/node/v$NODE_V/bin
-export RUSTPATH=$HOME/.cargo/bin
+# ENV Variables for PATH
+export USR=/usr/local/bin
+export MYCMD=$HOME/.bin
 
-source ~/.git-prompt.sh
-PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+PATH="$USR:$MYCMD:$PATH"
 
+# prompt
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
 
-PATH="$USRPATH:$HOME/.bin:$HOME/.local:$GOPATH:$JSPATH:$RUSTPATH:$PATH"
+# git-prompt
+source $HOME/.git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
+
+precmd() {
+    __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
+}
