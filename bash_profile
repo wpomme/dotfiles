@@ -1,13 +1,6 @@
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-
-    if [ -f "$HOME/.aliases" ]; then
-	. "$HOME/.aliases"
-    fi
+# load aliases
+if [ -f "$HOME/.aliases" ]; then
+. "$HOME/.aliases"
 fi
 
 export NODE_V=12.9.1
