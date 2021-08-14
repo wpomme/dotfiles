@@ -97,7 +97,8 @@ alias gsd="git stash drop"
 ## 直前のコミット取り消し
 alias greset="git reset --soft HEAD^"
 ## vimのmergetoolを使用してコンフリクトを解消する
-alias vconfl="git mergetool -t vimdiff"
+## conflict時vimdiff起動
+alias vimdiff="git mergetool -t vimdiff"
 
 # docker
 alias d="docker"
