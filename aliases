@@ -128,3 +128,7 @@ alias dcud="docker-compose up -d"
 alias dcudb="docker-compose up -d --build" 
 
 alias ddd="docker-compose run api python manage.py"
+
+# quit
+alias isv="ps ax | grep vim | grep -v grep"
+alias vkillall="ps ax | grep vim | grep -v grep | awk '{print $1}' | xargs kill -9"

@@ -133,6 +133,9 @@ Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+" GraphQL
+Plug 'jparise/vim-graphql'
+
 " Lint
 Plug 'w0rp/ale'
 let g:ale_lint_on_text_changed = 0

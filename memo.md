@@ -104,3 +104,6 @@ C + u -> delete previous line
 C + w -> delete a word
 C + h -> delete one character
 Alt + arrows -> moving per word  
+
+### oneliner (experimental)
+`ps | grep -v grep | grep `tty | sed -e s#/dev/##g` | awk '{print $1}' | xargs kill -9`

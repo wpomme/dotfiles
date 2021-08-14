@@ -27,6 +27,12 @@ cd ~/.vim/plugged/YouCompleteMe
 python3 install.py
 ```
 
+# nvm
+https://github.com/nvm-sh/nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
 # Brewfile
 create Brewfile  
 ```
