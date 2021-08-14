@@ -1,28 +1,35 @@
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-
-    if [ -f "$HOME/.aliases" ]; then
-	. "$HOME/.aliases"
-    fi
+# load aliases
+if [ -f "$HOME/.aliases" ]; then
+. "$HOME/.aliases"
 fi
 
-export NODE_V=12.9.1
-export USR=/usr/local
+# CPU Architecture
+export ARCH=`uname -m`
 
-export USRPATH=$USR/bin
-export JSPATH=$HOME/.nodebrew/node/v$NODE_V/bin
-export RUSTPATH=$HOME/.cargo/bin
+# ENV Variables for PATH
+export USR=/usr/local/bin
+export MYCMD=$HOME/.bin
 
-source ~/.git-prompt.sh
-PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+PATH="$USR:$MYCMD:$PATH"
 
+# prompt
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
 
-PATH="$USRPATH:$HOME/.bin:$HOME/.local:$GOPATH:$JSPATH:$RUSTPATH:$PATH"
+# git-prompt
+source $HOME/.git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+precmd() {
+    __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
+}
+>>>>>>> 706a902b13c68d9a70a02b3fea505096b26151d2
