@@ -32,4 +32,3 @@ export NVM_DIR="$HOME/.nvm"
 precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
->>>>>>> 706a902b13c68d9a70a02b3fea505096b26151d2
