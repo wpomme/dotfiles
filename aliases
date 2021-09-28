@@ -53,7 +53,7 @@ alias em="emacs"
 alias nv="nvim"
 alias vedit="vim ~/.vimrc"
 alias nvedit="nvim ~/.config/nvim/init.vim"
-alias memo="vim ~/dotfiles/memo.md"
+# alias memo="vim ~/dotfiles/memo.md"
 # api
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"

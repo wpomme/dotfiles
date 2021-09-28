@@ -107,3 +107,74 @@ Alt + arrows -> moving per word
 
 ### oneliner (experimental)
 `ps | grep -v grep | grep `tty | sed -e s#/dev/##g` | awk '{print $1}' | xargs kill -9`
+
+## ssh
+ssh <login name>@<address>
+
+# プロセス管理
+## ps
+a - 端末のあるプロセス表示
+u - 実行ユーザー名表示
+x - 端末のないプロセス表示
+e - 環境変数を表示
+### コマンド 
+- 全プロセスを表示
+ps aux
+
+## grep
+options
+-r -> `grep -r <pattern> <dif>` -> Recursively files search
+-n case-insensitive 
+--exclude-dir
+--exclude
+
+example:
+```
+grep -rn Event . --exclude-dir=node_modules --exclude-dir=assets --exclude="*.min.*" | less
+grep -rn RECEIVE_EVENTS . --exclude-dir=node_modules --exclude-dir=assets --exclude-dir=public
+```
+
+## find
+options
+`find <root-path> -name "<file-name>"`
+
+## yes
+### remove files without yes or no
+`yes | rm <files>`
+
+## docker
+`docker exec -it `dps -q` /bin/bash`
+docker exec -it `dps -q | awk 'NR==1{ print $1 }'` /bin/bash
+
+# git
+# 初期設定
+## gitのアカウント情報などの確認
+git config -l
+
+## gitアカウント作成
+git config --global user.name "yuya hashimoto"
+git config --global user.email "<email>"
+
+### ローカルのgitアカウント作成
+git config --local user.name "wpomme"
+git config --local user.email "<email>"
+
+## テキストエディタをVimにする
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+
+## conflict
+git mergetool -t vimdiff
+
+## rename
+git branch -m <old> <new>
+
+--- git rebase などの操作のメモを書く
+## コミット取り消し
+git reset --soft HEAD^
+
+## untracked files の消去
+git clean -n
+git clean -f .
+
+## git squash
+git merge --squash origin/feature/xxx
