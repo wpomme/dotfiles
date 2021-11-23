@@ -1,4 +1,9 @@
 #!/usr/bin/env bash -eu
+#
+# how to use
+#
+# ls | while read f ; do bandcamp-unzipper $f ; done
+#
 
 if [ $# -ne 1 ]; then
   echo 'write file name after command.'
