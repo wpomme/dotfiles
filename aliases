@@ -21,10 +21,9 @@ case `uname` in
     alias la="ls -aGpF"
   ;;
   Linux)
-    alias l='ls -al'
+    alias l='ls --color=auto'
     alias ll='ls -al'
     alias ls='ls --color=auto'
-    alias ls='ls --color=auto -al'
     alias ipi="ip -br -c a"
   ;;
 esac
