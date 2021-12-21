@@ -133,3 +133,6 @@ alias ddd="docker-compose run api python manage.py"
 # quit
 alias isv="ps ax | grep vim | grep -v grep"
 alias vkillall="ps ax | grep vim | grep -v grep | awk '{print $1}' | xargs kill -9"
+
+# sail
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
