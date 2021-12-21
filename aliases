@@ -3,15 +3,16 @@
 # For WSL
 # alias clip="clip.exe"
 
-# TODO
-# git config系も入れた方がいいかも
-# git grep系も入れてみたい
-# psやcpu等のリソース監視系のコマンドも入れたい。他にkillとか
-# INFO git grep でgit管理内のファイルの検索
-# ファイル内検索・フォルダ検索を体系化する
-# 何個かdotfiles内にシェル作っておく
+# Reload profile
+if [ $SHELL = /bin/zsh ]; then
+  alias src.="source ~/.zprofile"
+fi
+if [ $SHELL = /bin/bash ]; then
+  alias src.="source ~/.bash_profile"
+fi
 
-# ls
+# BASIC
+## ls
 case `uname` in
   Darwin)
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say cache flushed'
@@ -21,49 +22,38 @@ case `uname` in
     alias la="ls -aGpF"
   ;;
   Linux)
-    alias l='ls -al'
+    alias l='ls --color=auto'
     alias ll='ls -al'
     alias ls='ls --color=auto'
-    alias ls='ls --color=auto -al'
     alias ipi="ip -br -c a"
   ;;
 esac
-# reload profile
-if [ $SHELL = /bin/zsh ]; then
-  alias src.="source ~/.zprofile"
-fi
-if [ $SHELL = /bin/bash ]; then
-  alias src.="source ~/.bash_profile"
-fi
-
-# cd
+## cd
 alias c="cd"
 alias ch="cd ~"
 alias cx="cd .."
 alias cxx="cd ../.."
 alias cxxx="cd ../../.."
-# grep
+## grep
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-# vim, emacs
+## vim, emacs
 alias v="vim"
-alias vw="view"
 alias em="emacs"
-alias nv="nvim"
 alias vedit="vim ~/.vimrc"
-alias nvedit="nvim ~/.config/nvim/init.vim"
 # alias memo="vim ~/dotfiles/memo.md"
-# api
+## api
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
-# etc
+## etc
 alias serveit="python -m SimpleHTTPServer"
 alias makectags="ctags -R --exclude=.git --exclude=node_modules --exclude=test"
-# for mac, jdate is no use
 alias src="source"
 alias penv="source bin/activate"
+# for mac, jdate is unavailable
 alias jdate="TZ=JST+15 date"
+## interactive option
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
