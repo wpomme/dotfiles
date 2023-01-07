@@ -56,6 +56,11 @@ precmd() {
 #     export PATH=${HOME}/.nodenv/bin:${PATH} && \
 #     eval "$(nodenv init -)"
 
+# pyenv
+[[ -d ~/.pyenv ]] && \
+    export PATH=${HOME}/.pyenv/shims:${PATH} && \
+    eval "$(pyenv init -)"
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -65,3 +70,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # deduplicate PATH
 typeset -U path PATH
+
+# gcc
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"

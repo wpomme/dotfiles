@@ -62,8 +62,8 @@ inoremap [[ []<ESC>i
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
-inoremap << <><LEFT>
 inoremap `` ``<LEFT>
+
 " inoremap || ||<LEFT>
 noremap j gj
 noremap k gk
@@ -121,6 +121,7 @@ Plug 'editorconfig/editorconfig-vim'
 " filer
 Plug 'scrooloose/nerdtree'
 nnoremap <silent> <space>u :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['.[oa]$', '.(so)$', '.(tgz|gz|zip)$', '.out$', '.class$', '.jar$' ]
 
 " Brackets
 Plug 'tpope/vim-surround'

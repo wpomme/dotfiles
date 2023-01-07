@@ -69,8 +69,6 @@ alias glo="git log --decorate --all --oneline"
 alias glgo="git log --decorate --all --oneline --graph"
 ## git commit
 alias gcm="git commit -m"
-alias gcam="git commit -am"
-alias gpuom="git push -u origin master"
 ## branch, checkout, diff, etc...
 alias gb="git branch"
 alias gfc="git branch | fzf | xargs git checkout"
@@ -83,11 +81,7 @@ alias gsl="git stash list"
 alias gss="git stash save"
 alias gsa="git stash apply"
 alias gsd="git stash drop"
-## その他
-## 直前のコミット取り消し
-alias greset="git reset --soft HEAD^"
-## vimのmergetoolを使用してコンフリクトを解消する
-## conflict時vimdiff起動
+# git: fix conflict
 alias vimdiff="git mergetool -t vimdiff"
 
 # docker
