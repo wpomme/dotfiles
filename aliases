@@ -120,3 +120,6 @@ alias vkillall="ps ax | grep vim | grep -v grep | awk '{print $1}' | xargs kill 
 
 # sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+# Architecture
+alias arm="exec arch -arch arm64e /bin/zsh --login"
+alias x86="exec arch -arch x86_64 /bin/zsh --login"
