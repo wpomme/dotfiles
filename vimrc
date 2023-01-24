@@ -20,8 +20,8 @@ scriptencoding utf-8
 
 " tab
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 
 " search
 set ignorecase
@@ -29,6 +29,13 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+
+" Typescript
+augroup FiletypeGroup
+    autocmd!
+    " .ts is a Typescript file
+    au BufNewFile,BufRead *.ts set filetype=typescript
+augroup END
 
 " Indent
 if has("autocmd")
@@ -38,19 +45,13 @@ if has("autocmd")
   autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType css         setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType javascript  setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType typescript  setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
   autocmd FileType java        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
   autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
 endif
-
-" Typescript
-augroup FiletypeGroup
-    autocmd!
-    " .ts is a Typescript file
-    au BufNewFile,BufRead *.ts set filetype=typescript
-augroup END
 
 "" Advance setting
 " key mapping
@@ -145,7 +146,10 @@ Plug 'junegunn/fzf.vim'
 " Color
 Plug 'tomasr/molokai'
 let g:molokai_original = 1
-colorscheme darkblue
+" colorscheme darkblue
+
+" Styled components
+Plug 'styled-components/vim-styled-components'
 
 " Tagbar
 Plug 'majutsushi/tagbar'

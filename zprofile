@@ -15,11 +15,13 @@ export MYCMD=$HOME/.bin
 export BREWBIN=$BREW/bin
 export BREWSBIN=$BREW/sbin
 
-# brew command
+# CPU architecture
 if [[ $ARCH == 'arm64' ]]; then
     alias brew="/opt/homebrew/bin/brew"
-else
+	eval $(/opt/homebrew/bin/brew shellenv)
+elif [[ $ARCH == 'x86_64' ]]; then
     alias brew="/usr/local/bin/brew"
+	eval $(/usr/local/bin/brew shellenv)
 fi
 
 # PATH
