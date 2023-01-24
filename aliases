@@ -40,7 +40,6 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 ## vim, emacs
 alias v="vim"
-alias em="emacs"
 alias vedit="vim ~/.vimrc"
 # alias memo="vim ~/dotfiles/memo.md"
 ## api
@@ -58,23 +57,27 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias cl="clear"
-# git
-alias gaa="git add ."
+# git shorthand
+## add, status
 alias ga="git add"
 alias gs="git status"
+## branch, checkout, diff, etc...
+alias gb="git branch"
+alias gc="git checkout"
+alias gd="git diff"
+### git fuzzy checkout, git fuzzy diff
+#### switch current branch to a given branch
+alias gfc="git branch | fzf | xargs git checkout"
+#### compare current branch with a given branch
+alias gfd='git branch | fzf | xargs -I {} git diff $(git branch --show-current) {}'
+## git log
 ## TODO add more than current git log aliases
 alias gl="git log --decorate --all"
 alias glg="git log --decorate --all --graph"
 alias glo="git log --decorate --all --oneline"
 alias glgo="git log --decorate --all --oneline --graph"
-## git commit
+## git commit with comment
 alias gcm="git commit -m"
-## branch, checkout, diff, etc...
-alias gb="git branch"
-alias gfc="git branch | fzf | xargs git checkout"
-alias gfd="git branch | fzf | xargs git diff $CURRENT_BRANCH"
-alias gc="git checkout"
-alias gd="git diff"
 ## git stash
 alias gsh="git stash"
 alias gsl="git stash list"
@@ -116,7 +119,7 @@ alias ddd="docker-compose run api python manage.py"
 
 # quit
 alias isv="ps ax | grep vim | grep -v grep"
-alias vkillall="ps ax | grep vim | grep -v grep | awk '{print $1}' | xargs kill -9"
+alias killv="pgrep vim | xargs kill -9"
 
 # sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

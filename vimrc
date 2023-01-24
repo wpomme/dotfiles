@@ -97,9 +97,6 @@ Plug 'billyvg/tigris.nvim', { 'do': './install.sh' }
 Plug 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
 
-" Elixir
-Plug 'elixir-editors/vim-elixir'
-
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -134,9 +131,6 @@ Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" GraphQL
-Plug 'jparise/vim-graphql'
-
 " Lint
 Plug 'w0rp/ale'
 let g:ale_lint_on_text_changed = 0
@@ -162,10 +156,10 @@ Plug 'vim-airline/vim-airline'
 " toml
 Plug 'cespare/vim-toml'
 
-" Unsorted
+" HTML Tag
 Plug 'vim-scripts/closetag.vim'
 
-" experimental
+" completion
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
