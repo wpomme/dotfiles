@@ -1,0 +1,16 @@
+# find
+## basic
+options
+-type: 検索するファイルの種別を指定する
+       fが一般のファイル、dがディレクトリ
+
+-name: 検索するファイルの名前を指定する
+       ファイル名を部分一致で検索するなら
+       "*<file-name>*"のように検索する
+       完全一致なら<file-name>で問題ない
+
+examples
+```
+find . -type f -name "*aaa*"
+find src -type d -name components
+```
