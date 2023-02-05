@@ -53,6 +53,10 @@ if has("autocmd")
   autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
 endif
 
+" netrw
+" set defautl view to tree view
+let g:netrw_liststyle = 3
+
 "" Advance setting
 " key mapping
 inoremap {{ {}<Left>
