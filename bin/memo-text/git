@@ -16,3 +16,12 @@ git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 ## git squash
 git merge --squash origin/feature/xxx
+
+## reset, revert
+reset -> コミットログが残らない
+revert -> コミットログが残る
+
+featureブランチで直前のコミットを取り消す
+```
+git reset --soft HEAD^
+```
