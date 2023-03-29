@@ -125,6 +125,8 @@ Plug 'scrooloose/nerdtree'
 nnoremap <silent> <space>u :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['.[oa]$', '.(so)$', '.(tgz|gz|zip)$', '.out$', '.class$', '.jar$' ]
 
+nnoremap <silent> <LEADER>y :Ex <CR>
+
 " Brackets
 Plug 'tpope/vim-surround'
 
