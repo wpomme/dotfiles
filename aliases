@@ -39,9 +39,10 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 ## vim, emacs
-alias v="vim"
 alias vedit="vim ~/.vimrc"
 # alias memo="vim ~/dotfiles/memo.md"
+## Neovim
+alias n="nvim"
 ## api
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
@@ -65,6 +66,7 @@ alias gs="git status"
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
+alias gds="git diff --staged"
 ### git fuzzy checkout, git fuzzy diff
 #### switch current branch to a given branch
 alias gfc="git branch | fzf | xargs git checkout"

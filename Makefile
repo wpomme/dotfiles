@@ -5,6 +5,7 @@ sync:
 	[ -d ~/.emacs.d/ ] || mkdir -p ~/.emacs.d/
 
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
+	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	# [ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship.toml ~/.config/starship.toml
 	[ -d ~/.bin ] || ln -s $(PWD)/bin ~/.bin
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
