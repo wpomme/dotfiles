@@ -2,7 +2,7 @@
 #
 # how to use
 #
-# ls | while read f ; do bandcamp-unzipper $f ; done
+# ls | while read f ; do bandcamp-unzipper.sh $f ; done
 #
 
 if [ $# -ne 1 ]; then

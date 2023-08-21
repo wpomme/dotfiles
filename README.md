@@ -30,3 +30,15 @@ install my packages via Brewfile
 ```
 brew bundle
 ```
+
+# coc-server
+```
+:CocConfig
+```
+->
+
+```
+{
+    "suggest.noselect": true
+}
+```
