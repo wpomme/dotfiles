@@ -40,9 +40,6 @@ set wrapscan           "検索が末尾まで進んだら先頭から再び検�
 let g:netrw_liststyle = 3
 
 " key mapping
-" ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
-
 "* ノーマルモード
 "* 文字列が折り返されていても一行ずつ移動
 noremap j gj
@@ -53,16 +50,39 @@ noremap <S-l>   $
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-]> g<C-]> 
+" Emacs風
+" <C-n>, <C-p>はVim, Emacsで共通
+" 画面を送る<C-f>, <C-b>はVimのデフォルトのままにする
+
 " 挿入モード
 inoremap <C-]> <ESC>g<C-]> 
 " jk同時押しで挿入モードを抜ける
 inoremap jk <ESC> 
 inoremap kj <ESC>
+" Emacs風
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
+" Parentesis 補完
+inoremap {{ {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap (( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap [[ []<ESC>i
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap << <><ESC>i
+inoremap "" ""<LEFT>
+inoremap '' ''<LEFT>
+inoremap `` ``<LEFT>
+
 " コマンドラインモード
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
+"
+" Emacs風
+" <C-e>はVim, Emacsで共通
+" コマンドラインモードのデフォルトのキーバインドでは、
+" <C-b>が行頭に戻るキーになっているがEmacs風にするため<C-a>で上書きする
+cnoremap <C-a> <C-b>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
 
 " leader
 let mapleader = "\<Space>"
@@ -78,9 +98,14 @@ Jetpack 'lambdalisue/fern.vim' " Filer
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'vim-airline/vim-airline'
 Jetpack 'vim-airline/vim-airline-themes'
-Jetpack 'tomasr/molokai'
+Jetpack 'NLKNguyen/papercolor-theme'
+Jetpack 'scrooloose/nerdtree'
+Jetpack 'tpope/vim-surround'
+Jetpack 'airblade/vim-gitgutter'
+Jetpack 'tpope/vim-fugitive'
 " Jetpack 'lambdalisue/nerdfont.vim'
 " Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
+Jetpack 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 " Jetpack 'vlime/vlime', { 'rtp': 'vim' }
 " Jetpack 'dracula/vim', { 'as': 'dracula' }
@@ -88,16 +113,20 @@ Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 call jetpack#end()
 
 " Filer
-nnoremap <silent> <LEADER>u :Fern . -reveal=% -drawer -toggle -width=40<CR> 
+" nnoremap <silent> <LEADER>u :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap <silent> <LEADER>y :Ex<CR>
+nnoremap <silent> <LEADER>u :NERDTreeToggle<cr>
 
 " Font
 " let g:fern#renderer = 'nerdfont'
 
-" Color
-let g:molokai_original = 1
-colorscheme molokai
-set t_Co=256
+" Colorscheme
+colorscheme PaperColor
+set background=dark
+
+" Fzf
+set rtp+=~/.fzf
+
 
 " Coc.nvim
 " GoTo code navigation.

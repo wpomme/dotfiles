@@ -79,3 +79,6 @@ typeset -U path PATH
 
 # gcc
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+
+# java
+export JAVA_HOME="$(/usr/libexec/java_home)"
