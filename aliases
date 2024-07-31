@@ -66,12 +66,11 @@ alias gs="git status"
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
-alias gds="git diff --staged"
 ### git fuzzy checkout, git fuzzy diff
 #### switch current branch to a given branch
 alias gfc="git branch | fzf | xargs git checkout"
 #### compare current branch with a given branch
-alias gfd='git branch | fzf | xargs -I {} git diff $(git branch --show-current) {}'
+alias gfd='git branch | fzf | xargs -I {} git diff {} $(git branch --show-current)'
 ## git log
 ## TODO add more than current git log aliases
 alias gl="git log --decorate --all"
@@ -89,42 +88,21 @@ alias gsd="git stash drop"
 # git: fix conflict
 alias vimdiff="git mergetool -t vimdiff"
 
-# docker
-alias d="docker"
-alias dl="docker logs"
-alias drun="docker run"
-alias dbuild="docker build"
-alias dimg="docker images"
 ## docker ps
 alias dps="docker ps"
-alias dpsa="docker ps -a"
-alias dpsaq="docker ps -aq"
-## docker rmi
-alias drmi="docker rmi"
-# alias drm-notags="docker rmi $(docker images -f 'dangling=true' -q)"
-# alias drm-latest="docker rmi $(docker images *:latest -q)"
 # docker-compose
 alias fig="docker-compose"
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
-alias dcd="docker-compose ps"
-# docker-machine
-alias dm="docker-machine"
-alias dml="docker-machine ls"
 # unsorted
 alias dsh="docker exec -it"
-# -d = exec deamon
-alias dcud="docker-compose up -d" 
-alias dcudb="docker-compose up -d --build" 
 
-alias ddd="docker-compose run api python manage.py"
+# alias ddd="docker-compose run api python manage.py"
 
 # quit
 alias isv="ps ax | grep vim | grep -v grep"
 alias killv="pgrep vim | xargs kill -9"
 
 # sail
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+# alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 # Architecture
 alias arm="exec arch -arch arm64e /bin/zsh --login"
 alias x86="exec arch -arch x86_64 /bin/zsh --login"
