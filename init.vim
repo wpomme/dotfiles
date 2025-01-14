@@ -98,7 +98,7 @@ Jetpack 'lambdalisue/fern.vim' " Filer
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'vim-airline/vim-airline'
 Jetpack 'vim-airline/vim-airline-themes'
-Jetpack 'NLKNguyen/papercolor-theme'
+" Jetpack 'NLKNguyen/papercolor-theme'
 Jetpack 'scrooloose/nerdtree'
 Jetpack 'tpope/vim-surround'
 Jetpack 'airblade/vim-gitgutter'
@@ -121,8 +121,8 @@ nnoremap <silent> <LEADER>u :NERDTreeToggle<cr>
 " let g:fern#renderer = 'nerdfont'
 
 " Colorscheme
-colorscheme PaperColor
-set background=dark
+" colorscheme PaperColor
+" set background=dark
 
 " Fzf
 set rtp+=~/.fzf
