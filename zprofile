@@ -82,3 +82,7 @@ export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 # java
 export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+
+# zoxide
+eval "$(zoxide init zsh)"
