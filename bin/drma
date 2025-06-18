@@ -1,6 +1,6 @@
 #! /bin/sh
 CONTAINER_ID=$(docker ps -aq)
-# echo $CONTAINER_ID
+
 for ID in $CONTAINER_ID
 do
     docker stop $ID
