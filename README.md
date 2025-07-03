@@ -1,33 +1,19 @@
 # dotfiles
-1. activate ycmd server
-```
-brew install cmake
-cd ~/.vim/plugged/YouCompleteMe
-python3 install.py
+
+## Linux環境
+1. dotfilesを適用
+```sh
+cd dotfiles
+make
+source ~/.bash_profile
 ```
 
-# nvm
-https://github.com/nvm-sh/nvm
-
-# Brewfile
-create Brewfile  
+2. neovim をダウンロード
 ```
-brew bundle dump
+sudo apt-get install neovim # Debian の場合
 ```
 
-install my packages via Brewfile  
-```
-brew bundle
-```
+3. Jetpack をダウンロード
+https://github.com/tani/vim-jetpack?tab=readme-ov-file#installation を参照
 
-# coc-server
-```
-:CocConfig
-```
-->
-
-```
-{
-    "suggest.noselect": true
-}
-```
+4. neovim 内でJetpackSync を実行

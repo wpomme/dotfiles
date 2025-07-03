@@ -32,3 +32,4 @@ export NVM_DIR="$HOME/.nvm"
 precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
+. "/Users/hy/.deno/env"
