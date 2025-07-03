@@ -50,6 +50,8 @@ noremap <S-l>   $
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-]> g<C-]> 
+" <C-G>を二回打つとクリップボードにファイルパスを保存する
+nnoremap <C-G><C-G> <C-G><Cmd>let @+ = expand("%")<CR>
 " Emacs風
 " <C-n>, <C-p>はVim, Emacsで共通
 " 画面を送る<C-f>, <C-b>はVimのデフォルトのままにする
