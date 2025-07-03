@@ -53,11 +53,6 @@ precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
 
-# node
-# [[ -d ~/.nodenv ]] && \
-#     export PATH=${HOME}/.nodenv/bin:${PATH} && \
-#     eval "$(nodenv init -)"
-
 # ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init - zsh)"
