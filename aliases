@@ -89,7 +89,6 @@ alias vimdiff="git mergetool -t vimdiff"
 alias dps="docker ps"
 
 # quit
-alias isv="ps ax | grep vim | grep -v grep"
 alias killv="pgrep vim | xargs kill -9"
 
 # Architecture
