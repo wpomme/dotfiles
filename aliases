@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# For WSL
-# alias clip="clip.exe"
-
 # Reload profile
 if [ $SHELL = /bin/zsh ]; then
   alias src.="source ~/.zprofile"
@@ -28,81 +25,73 @@ case `uname` in
     alias ipi="ip -br -c a"
   ;;
 esac
+
 ## cd
 alias c="cd"
 alias ch="cd ~"
 alias cx="cd .."
 alias cxx="cd ../.."
 alias cxxx="cd ../../.."
+
 ## grep
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-## vim, emacs
-alias vedit="vim ~/.vimrc"
-# alias memo="vim ~/dotfiles/memo.md"
+
 ## Neovim
 alias n="nvim"
-## api
+
+## utilities
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
+alias jdate="TZ=JST+15 date"
+
 ## etc
 alias serveit="python -m SimpleHTTPServer"
-alias makectags="ctags -R --exclude=.git --exclude=node_modules --exclude=test"
 alias src="source"
-alias penv="source bin/activate"
-# for mac, jdate is unavailable
-alias jdate="TZ=JST+15 date"
+
 ## interactive option
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias cl="clear"
-# git shorthand
+
+# git
 ## add, status
 alias ga="git add"
 alias gs="git status"
+
 ## branch, checkout, diff, etc...
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
+
 ### git fuzzy checkout, git fuzzy diff
 #### switch current branch to a given branch
 alias gfc="git branch | fzf | xargs git checkout"
 #### compare current branch with a given branch
 alias gfd='git branch | fzf | xargs -I {} git diff {} $(git branch --show-current)'
-## git log
-## TODO add more than current git log aliases
-alias gl="git log --decorate --all"
-alias glg="git log --decorate --all --graph"
-alias glo="git log --decorate --all --oneline"
-alias glgo="git log --decorate --all --oneline --graph"
+
 ## git commit with comment
 alias gcm="git commit -m"
+
 ## git stash
 alias gsh="git stash"
 alias gsl="git stash list"
 alias gss="git stash save"
 alias gsa="git stash apply"
 alias gsd="git stash drop"
-# git: fix conflict
+
+## git fix conflict
 alias vimdiff="git mergetool -t vimdiff"
 
 ## docker ps
 alias dps="docker ps"
-# docker-compose
-alias fig="docker-compose"
-# unsorted
-alias dsh="docker exec -it"
-
-# alias ddd="docker-compose run api python manage.py"
 
 # quit
 alias isv="ps ax | grep vim | grep -v grep"
 alias killv="pgrep vim | xargs kill -9"
 
-# sail
-# alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 # Architecture
 alias arm="exec arch -arch arm64e /bin/zsh --login"
 alias x86="exec arch -arch x86_64 /bin/zsh --login"

@@ -6,35 +6,77 @@ usage() {
     exec >&2
     echo "
 How to use:
-$ memo [keyword]
+$ memo [keyword] [subtopic]
 keyword => git, ls, etc...
+subtopic => log, diff, config, etc... (optional)
+
+Examples:
+$ memo git          # Show all git topics
+$ memo git log      # Show git log specific memo
+$ memo list         # List all available topics
 "
     exit 1
 }
 
 list() {
-    ls $SCRIPT_DIR/memo-text
+    echo "Available topics:"
+    for topic in $SCRIPT_DIR/memo-text/*; do
+        if [ -d "$topic" ]; then
+            echo "  $(basename $topic)/ (has subtopics)"
+            for subtopic in "$topic"/*; do
+                [ -f "$subtopic" ] && echo "    $(basename $subtopic)"
+            done
+        elif [ -f "$topic" ]; then
+            echo "  $(basename $topic)"
+        fi
+    done
+}
+
+show_topic() {
+    local topic=$1
+    local subtopic=$2
+    local topic_path="$SCRIPT_DIR/memo-text/$topic"
+    
+    if [ -d "$topic_path" ]; then
+        if [ -n "$subtopic" ]; then
+            local subtopic_path="$topic_path/$subtopic"
+            if [ -f "$subtopic_path" ]; then
+                cat "$subtopic_path"
+            else
+                echo "Subtopic '$subtopic' not found for '$topic'"
+                echo "Available subtopics:"
+                ls "$topic_path" 2>/dev/null | sed 's/^/  /'
+                exit 1
+            fi
+        else
+            echo "Available subtopics for '$topic':"
+            ls "$topic_path" 2>/dev/null | sed 's/^/  /'
+        fi
+    elif [ -f "$topic_path" ]; then
+        if [ -n "$subtopic" ]; then
+            echo "Topic '$topic' doesn't have subtopics"
+            exit 1
+        else
+            cat "$topic_path"
+        fi
+    else
+        echo "Topic '$topic' not found"
+        exit 1
+    fi
 }
 
 if [ $# -eq 0 ]; then
     usage
 fi
 
-if [ $# -eq 1 ]; then
-    case $1 in
-        help)
-            usage
-            ;;
-        list)
-            list
-            ;;
-        *)
-            cat $SCRIPT_DIR/memo-text/$1
-            ;;
-    esac
-fi
-
-if [ $# -gt 1 ]; then
-    echo "Too many arguments"
-    exit 1
-fi
+case $1 in
+    help)
+        usage
+        ;;
+    list)
+        list
+        ;;
+    *)
+        show_topic "$1" "$2"
+        ;;
+esac
