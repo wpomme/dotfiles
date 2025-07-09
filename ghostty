@@ -1,0 +1,4 @@
+# リガチャを無効にする
+font-feature = "-calt"
+font-feature = "-dlig"
+font-feature = "-liga"
