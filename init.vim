@@ -100,13 +100,10 @@ Jetpack 'lambdalisue/fern.vim' " Filer
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'vim-airline/vim-airline'
 Jetpack 'vim-airline/vim-airline-themes'
-" Jetpack 'NLKNguyen/papercolor-theme'
 Jetpack 'scrooloose/nerdtree'
 Jetpack 'tpope/vim-surround'
 Jetpack 'airblade/vim-gitgutter'
 Jetpack 'tpope/vim-fugitive'
-" Jetpack 'lambdalisue/nerdfont.vim'
-" Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 Jetpack 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 " Jetpack 'vlime/vlime', { 'rtp': 'vim' }
@@ -119,16 +116,8 @@ call jetpack#end()
 nnoremap <silent> <LEADER>y :Ex<CR>
 nnoremap <silent> <LEADER>u :NERDTreeToggle<cr>
 
-" Font
-" let g:fern#renderer = 'nerdfont'
-
-" Colorscheme
-" colorscheme PaperColor
-" set background=dark
-
 " Fzf
 set rtp+=~/.fzf
-
 
 " Coc.nvim
 "GoTo code navigation.
@@ -137,11 +126,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
  
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
+" 画面下部のステータスラインにcocの状態を表示する
 set statusline^=%{coc#status()}
 
+" テキストの上でKをクリックすると、そのテキストの説明がポップアップで表示される
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
