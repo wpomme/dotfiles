@@ -1,2 +1,10 @@
 #! /bin/bash
 ps ax | awk 'match($5, /^n?vim$/) { print $0 }'
+
+# vkillメモ
+## ttyの表示
+$ tty
+## 子プロセスの確認(PPID)
+$ aux -o ppid
+or
+$ aux -ef

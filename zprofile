@@ -15,6 +15,10 @@ export MYCMD=$HOME/.bin
 export BREWBIN=$BREW/bin
 export BREWSBIN=$BREW/sbin
 
+# homebrew
+alias brew="/opt/homebrew/bin/brew"
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # PATH
 PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
 
@@ -65,3 +69,5 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
