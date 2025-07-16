@@ -45,10 +45,8 @@ alias n="nvim"
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
 alias jdate="TZ=JST+15 date"
-
-## etc
+alias showpath='echo $PATH | tr : "\n"'
 alias serveit="python -m SimpleHTTPServer"
-alias src="source"
 
 ## interactive option
 alias rm="rm -i"
@@ -56,7 +54,15 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias cl="clear"
 
-# git
+# Architecture
+alias arm="exec arch -arch arm64e /bin/zsh --login"
+alias x86="exec arch -arch x86_64 /bin/zsh --login"
+
+# Docker
+## docker ps
+alias dps="docker ps"
+
+# Git
 ## add, status
 alias ga="git add"
 alias gs="git status"
@@ -84,13 +90,3 @@ alias gsd="git stash drop"
 
 ## git fix conflict
 alias vimdiff="git mergetool -t vimdiff"
-
-## docker ps
-alias dps="docker ps"
-
-# quit
-alias killv="pgrep vim | xargs kill -9"
-
-# Architecture
-alias arm="exec arch -arch arm64e /bin/zsh --login"
-alias x86="exec arch -arch x86_64 /bin/zsh --login"
