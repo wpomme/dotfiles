@@ -15,19 +15,7 @@ export MYCMD=$HOME/.bin
 export BREWBIN=$BREW/bin
 export BREWSBIN=$BREW/sbin
 
-# CPU architecture
-if [[ $ARCH == 'arm64' ]]; then
-    alias brew="/opt/homebrew/bin/brew"
-	eval $(/opt/homebrew/bin/brew shellenv)
-elif [[ $ARCH == 'x86_64' ]]; then
-    alias brew="/usr/local/bin/brew"
-	eval $(/usr/local/bin/brew shellenv)
-fi
-
 # PATH
-if [ -f "$HOME/.local-zprofile" ]; then
-. "$HOME/.local-zprofile"
-fi
 PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
 
 # go (arm64)
@@ -64,10 +52,6 @@ eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# starship
-[[ -f ~/.config/starship.toml ]] && \
-    eval "$(starship init zsh)"
 
 # deduplicate PATH
 typeset -U path PATH

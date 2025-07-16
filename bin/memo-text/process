@@ -1,0 +1,5 @@
+# process
+## 実行プロセスの集計
+```
+$ ps aux | cut -w -f11 | xargs basename | sort | uniq -c | sort -r
+```
