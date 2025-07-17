@@ -33,6 +33,12 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# Command History
+HISTSIZE=10000
+HISTFILESIZE=10000
+## 連続して繰り返し実行されたコマンドは、履歴に追加しない
+HISTCONTROL=ignoredups
+
 # git-prompt
 source $HOME/.git-prompt.sh
 
