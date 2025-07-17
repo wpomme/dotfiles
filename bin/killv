@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get current TTY number by removing letters and slashes from tty output
+TTY=$(tty | sed -e s@\[a-zA-Z\/\]@@g)
+
+# Find and kill all nvim processes running on the current TTY
+ps a \
+    | awk 'match($5, /^nvim$/) { print $1, substr($2, 2) }' \
+    | awk -v tty=$TTY 'match($2, tty) { print $1 }' \
+    | xargs -I{} kill -9 {}

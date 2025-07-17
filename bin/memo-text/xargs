@@ -4,3 +4,7 @@
 ## find に-print0 を指定して、改行の代わりにヌル文字でファイルパスのリストを区切る
 ## また、xargs に-0 を指定して、空白の代わりにヌル文字を入力セパレーターとして認識する
 $ find . -type f -name "*.*" -print0 | xargs -0 wc -l
+
+## -I コマンド
+## コマンドに渡す引数の場所を指定する
+$ echo 01\ Black\ Rain.aiff | tr " " - | xargs -I{} mv 01\ Black\ Rain.aiff {}
