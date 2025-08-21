@@ -1,14 +1,7 @@
 all: sync
 
 sync:
-	#####
-	# [ -d ~/.config/nvim/ ] - ~/.config/ghostty/ が存在すれば真を返す
-	# 次のコマンドと同等である。真であれば$statusは0になる
-	# $ test -d ~/.config/nvim ; echo $status
-	# || - 前のコマンドが失敗した場合、次のコマンドを実行する
-	# mkdir -p ~/.config/nvim - ディレクトリを作成する
-	# まとめると、「ディレクトリがなければ作成する」というコマンドになる
-	#####
+	# ~/.config/nvim ディレクトリがなければ、これを作成する
 	[ -d ~/.config/nvim/ ] || mkdir -p ~/.config/nvim/
 	[ -d ~/.config/ghostty/ ] || mkdir -p ~/.config/ghostty/
 	# [ -d ~/.config/nvim/lua/ ] || mkdir -p ~/.config/nvim/lua/
@@ -28,9 +21,6 @@ sync:
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmuxconf ~/.tmux.conf
 	[ -f ~/.tigrc ] || ln -s $(PWD)/tigrc ~/.tigrc
 
-	# don't show last login message
-	touch ~/.hushlogin
-
 clean:
 	rm -f ~/.vimrc 
 	rm -f ~/.config/ghostty/config
@@ -43,4 +33,4 @@ clean:
 	rm -f ~/.tmux.conf
 	rm -fr ~/.bin
 
-.PHONY: all clean sync build run kill
+.PHONY: all clean sync
