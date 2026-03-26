@@ -52,18 +52,11 @@ precmd() {
 }
 
 # Ruby
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init - zsh)"
 
 # mise
 eval "$(mise activate zsh)"
-
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# deduplicate PATH
-typeset -U path PATH
 
 # gcc
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
@@ -74,4 +67,5 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# deduplicate PATH
+typeset -U path PATH
