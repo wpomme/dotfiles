@@ -17,7 +17,7 @@ export BREWSBIN=$BREW/sbin
 
 # homebrew
 alias brew="/opt/homebrew/bin/brew"
-eval $(/opt/homebrew/bin/brew shellenv)
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # PATH
 PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
@@ -51,15 +51,14 @@ precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
 
-# ruby
+# Ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init - zsh)"
 
-# pyenv
-[[ -d ~/.pyenv ]] && \
-    export PATH=${HOME}/.pyenv/shims:${PATH} && \
-    eval "$(pyenv init -)"
+# mise
+eval "$(mise activate zsh)"
 
+# nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -71,7 +70,6 @@ export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
 # java
 export JAVA_HOME="$(/usr/libexec/java_home)"
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 # zoxide
 eval "$(zoxide init zsh)"
