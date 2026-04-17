@@ -4,14 +4,17 @@ sync:
 	# ~/.config/nvim ディレクトリがなければ、これを作成する
 	[ -d ~/.config/nvim/ ] || mkdir -p ~/.config/nvim/
 	[ -d ~/.config/ghostty/ ] || mkdir -p ~/.config/ghostty/
-	# [ -d ~/.config/nvim/lua/ ] || mkdir -p ~/.config/nvim/lua/
+	[ -d ~/.config/nvim/lua/ ] || mkdir -p ~/.config/nvim/lua/
 	[ -d ~/.emacs.d/ ] || mkdir -p ~/.emacs.d/
 
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
-	[ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
+	# [ -f ~/.config/nvim/init.vim ] || ln -s $(PWD)/init.vim ~/.config/nvim/init.vim
 	[ -f ~/.config/nvim/coc-settings.json ] || ln -s $(PWD)/coc-settings.json ~/.config/nvim/coc-settings.json
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty ~/.config/ghostty/config
-	# [ -f ~/.config/nvim/lua/init.lua ] || ln -s $(PWD)/init.lua ~/.config/nvim/lua/init.lua
+	[ -f ~/.config/nvim/init.lua ] || ln -s $(PWD)/init.lua ~/.config/nvim/init.lua
+	[ -f ~/.config/nvim/lua/basic.lua ] || ln -s $(PWD)/basic.lua ~/.config/nvim/lua/basic.lua
+	[ -f ~/.config/nvim/lua/keymap.lua ] || ln -s $(PWD)/keymap.lua ~/.config/nvim/lua/keymap.lua
+	[ -f ~/.config/nvim/lua/plugin.lua ] || ln -s $(PWD)/plugin.lua ~/.config/nvim/lua/plugin.lua
 	[ -d ~/.bin ] || ln -s $(PWD)/bin ~/.bin
 	[ -f ~/.zprofile ] || ln -s $(PWD)/zprofile ~/.zprofile
 	[ -f ~/.aliases ] || ln -s $(PWD)/aliases ~/.aliases
