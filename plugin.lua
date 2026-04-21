@@ -11,8 +11,9 @@ require("jetpack.packer").startup(function(use)
   use "vim-airline/vim-airline-themes"
   use "scrooloose/nerdtree"
   use "tpope/vim-surround"
-  use "airblade/vim-gitgutter"
+  use "tpope/vim-endwise"
   use "tpope/vim-fugitive"
+  use "airblade/vim-gitgutter"
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use { "neoclide/coc.nvim", branch = "release" }
   -- use { "vlime/vlime", rtp = "vim" }

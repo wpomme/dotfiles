@@ -11,8 +11,6 @@ vim.g.mapleader = " "
 -- Interface
 -- 行番号を表示
 vim.opt.number = true
--- 現在行からの相対行番号を表示（numberと併用で現在行は絶対行番号）
-vim.opt.relativenumber = true
 -- ヤンクした文字列をクリップボードにコピー
 vim.opt.clipboard = "unnamed"
 -- 現在の行を強調表示

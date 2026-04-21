@@ -51,10 +51,6 @@ precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
 
-# Ruby
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-eval "$(rbenv init - zsh)"
-
 # mise
 eval "$(mise activate zsh)"
 
