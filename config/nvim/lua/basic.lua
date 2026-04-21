@@ -63,4 +63,3 @@ vim.opt.splitbelow = true
 -- netrw
 -- set default view to tree view
 vim.g.netrw_liststyle = 3
-
