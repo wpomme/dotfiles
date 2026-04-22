@@ -1,9 +1,0 @@
-# リガチャを無効にする
-font-feature = "-calt"
-font-feature = "-dlig"
-font-feature = "-liga"
-
-# Mac OS でoptionキーをMac標準にする
-# バックスラッシュや特殊文字が入力可能になる
-# ターミナルのAlt/Metaキーとしては機能しなくなる
-macos-option-as-alt = false

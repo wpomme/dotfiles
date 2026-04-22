@@ -1,2 +1,0 @@
-#! /bin/bash
-ps ax | awk 'match($5, /^n?vim$/) { print $0 }'

@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
+# neovim
 [ -d ~/.config/nvim/lua/ ] || mkdir -p ~/.config/nvim/lua/
 
-function cp_nvim_files() {
-    cp ./config/nvim/init.lua ~/.config/nvim/
-    cp ./config/nvim/coc-settings.json ~/.config/nvim/
-    cp ./config/nvim/lua/*.lua ~/.config/nvim/lua/
-}
+cp config/nvim/init.lua ~/.config/nvim/
+cp config/nvim/coc-settings.json ~/.config/nvim/
+cp config/nvim/lua/*.lua ~/.config/nvim/lua/
 
-if [ -d ~/.config/nvim/lua/ ];then
-    cp_nvim_files
-else
-    mkdir -p ~/.config/nvim/lua/
-    cp_nvim_files
-fi
+# ghostty
+[ -d ~/.config/ghostty/ ] || mkdir -p ~/.config/ghostty/
+cp config/ghostty/config ~/.config/ghostty/
 
-if [ -d ~/.config/ghostty/ ];then
-    cp ./config/ghostty/config ~/.config/ghostty/config
-else
-    mkdir ~/.config/ghostty/
-    cp ./config/ghostty/config ~/.config/ghostty/config
-fi
+# tig, tmux
+cp main/tigrc ~/.tigrc
+cp main/tmuxconf ~/.tmux.conf
+
+# git-prompt, aliases, zprofile
+cp main/git-prompt.sh ~/.git-prompt.sh
+cp main/aliases ~/.aliases
+cp main/zprofile ~/.zprofile
+
+# bin/
+[ -d ~/.bin ] || mkdir ~/.bin
+find bin -perm -a+x -type f -exec cp {} ~/.bin \;

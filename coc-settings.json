@@ -1,8 +1,0 @@
-{
-  "suggest.noselect": true,
-  "deno.enable": true,
-  "solargraph.diagnostics": true,
-  "solargraph.completion": true,
-  "solargraph.hover": true,
-  "solargraph.definitions": true
-}
