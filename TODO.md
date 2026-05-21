@@ -1,12 +1,6 @@
 # TODO
-- tmuxで複数のセッションを使用して、セッションの切り替えを素早く行う
-    - dotfilesやmemoはmainのセッションと別にするなど
-    - tmuxのセッションに名前を付けて、tmux list-sessionsで名前をとってfzfに渡す、とかだろうか？
-- ghosttyの漢字を日本語っぽく直す
-    - 以下を実行
-    `brew install --cask font-0xProto-nerd-font`
-- dotfilesを適用した先の独自の設定を上手く管理したい
-    - 現状、コードを書き換えたままになっている
+- dotfilesを適用した環境によって、さらに独自に設定できるようにする
+    - .zprofile.local, .zshrc.localがあれば読み込むようにした
 - aliasesを消していきたい
     - zsh-autosuggestions を使えば消せるはず
         - それに従って、自動補完のタブ補完を有効にする

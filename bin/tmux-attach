@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+## tmux fuzzy attach
+## tmux list-sessions でセッションの一覧を取得して、その中から選択したセッションにアタッチする
+##TODO 起動中のtmuxのウィンドウからtmux-attachを実行した場合は、エラーにして終了する
+tmux attach -t $(tmux list-sessions -F '#{session_id}: #{session_name} has #{session_windows} windows #{?session_attached, (attached),}' | fzf | awk '{print $1}' | sed 's/://g')
