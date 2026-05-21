@@ -11,6 +11,9 @@ cp config/nvim/lua/*.lua ~/.config/nvim/lua/
 [ -d ~/.config/ghostty/ ] || mkdir -p ~/.config/ghostty/
 cp config/ghostty/config ~/.config/ghostty/
 
+# starship
+cp config/starship.toml ~/.config/starship.toml
+
 # mise
 # config.tomlはapply.shで作成しない方がいい気がする
 # [ -d ~/.config/mise/ ] || mkdir -p ~/.config/mise/
@@ -24,9 +27,7 @@ cp main/tmuxconf ~/.tmux.conf
 cp main/git-prompt.sh ~/.git-prompt.sh
 cp main/aliases ~/.aliases
 cp main/zprofile ~/.zprofile
-#TODO .zshrc を整理する .zshrc と .zprofile の役割を明確にする
-# .zshrc がなければmain/zshrcをコピーする
-[ -f ~/.zshrc ] || cp main/zshrc ~/.zshrc
+cp main/zshrc ~/.zshrc
 
 # bin/
 [ -d ~/.bin ] || mkdir ~/.bin

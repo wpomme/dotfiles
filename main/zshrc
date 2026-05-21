@@ -1,5 +1,68 @@
+# Load aliases if exists
+if [ -f "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi
+
+# Homebrew
+alias brew="/opt/homebrew/bin/brew"
+
+# Command History
+HISTSIZE=10000
+HISTFILESIZE=10000
+
+## 連続して繰り返し実行されたコマンドは、履歴に追加しない
+HISTCONTROL=ignoredups
+
+
+# Prompt
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+## git-prompt
+source $HOME/.git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
+
+precmd() {
+    __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
+}
+
+## Starship
+[ -f ~/.config/starship.toml ] && eval "$(starship init zsh)"
+
+# 補完系
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# zsh-syntax-highlighting
+## 補完システムと履歴からサジェストを取得する
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+
+## Tab2回でzsh-autosuggestions補完、1回は通常補完
+_zsh_autosuggest_or_complete() {
+  if [[ -n "$POSTDISPLAY" ]]; then
+    zle autosuggest-accept
+  else
+    zle expand-or-complete
+  fi
+}
+zle -N _zsh_autosuggest_or_complete
+bindkey '\t\t' _zsh_autosuggest_or_complete
+
+# zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# Load zshrc.local if exists
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# zsh-syntax-highlighting (最後に読み込む必要がある)
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

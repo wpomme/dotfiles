@@ -2,10 +2,10 @@
 
 # Reload profile
 if [ $SHELL = /bin/zsh ]; then
-  alias src.="source ~/.zprofile"
+  alias src.="source ~/.zprofile && source ~/.zshrc"
 fi
 if [ $SHELL = /bin/bash ]; then
-  alias src.="source ~/.bash_profile"
+  alias src.="source ~/.bash_profile && source ~/.bashrc"
 fi
 
 # BASIC
