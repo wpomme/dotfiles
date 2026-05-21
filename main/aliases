@@ -74,7 +74,7 @@ alias gd="git diff"
 
 ### git fuzzy checkout, git fuzzy diff
 #### switch current branch to a given branch
-alias gfc="git branch | fzf | xargs git checkout"
+alias gfc="git branch | fzf | xargs git switch"
 #### compare current branch with a given branch
 alias gfd='git branch | fzf | xargs -I {} git diff {} $(git branch --show-current)'
 

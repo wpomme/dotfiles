@@ -30,7 +30,7 @@ vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "<<", "<><ESC>i")
 vim.keymap.set("i", '""', '""<LEFT>')
 vim.keymap.set("i", "''", "''<LEFT>")
-vim.keymap.set("i", "``", "``<LEFT>")
+-- vim.keymap.set("i", "``", "``<LEFT>")
 
 -- Ruby
 vim.api.nvim_create_augroup("filetype_ruby", { clear = true })

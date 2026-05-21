@@ -36,9 +36,9 @@ vim.opt.fileformats = { "unix", "dos", "mac" }
 -- タブ入力を空白に変換
 vim.opt.expandtab = true
 -- タブを何文字の空白に変換するか
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 -- 自動インデント時に入力する空白の数
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 
 -- search
 -- 大文字小文字を区別しないで検索する

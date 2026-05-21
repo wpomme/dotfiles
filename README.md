@@ -1,5 +1,8 @@
 # dotfiles
-- deploy
+- デプロイ
 ```bash
+make
+
+# またはapply.shを直接実行する
 bash apply.sh
 ```
