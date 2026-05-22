@@ -41,17 +41,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## 補完システムと履歴からサジェストを取得する
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 
-## Tab2回でzsh-autosuggestions補完、1回は通常補完
-_zsh_autosuggest_or_complete() {
-  if [[ -n "$POSTDISPLAY" ]]; then
-    zle autosuggest-accept
-  else
-    zle expand-or-complete
-  fi
-}
-zle -N _zsh_autosuggest_or_complete
-bindkey '\t\t' _zsh_autosuggest_or_complete
-
 # zsh-completions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH

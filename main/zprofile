@@ -27,8 +27,8 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# deduplicate PATH
-typeset -U path PATH
-
 # Load zprofile.local if exists
 [ -f ~/.zprofile.local ] && source ~/.zprofile.local
+
+# deduplicate PATH
+typeset -U path PATH

@@ -12,6 +12,12 @@ $HOME
 - dotfiles
 - memo
 - exercise
+    - 家のPCだけ
++ .config
+    + ghostty
+    + mise
+    + nvim
+    - starship.toml
 + repo
     - eleventy-test
         - そのうち消す
