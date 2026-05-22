@@ -35,19 +35,23 @@ precmd() {
 [ -f ~/.config/starship.toml ] && eval "$(starship init zsh)"
 
 # 補完系
-# zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-## 補完システムと履歴からサジェストを取得する
-ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-
 # zsh-completions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-  autoload -Uz compinit
-  compinit
+  # zsh-autosuggestions
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+  autoload -Uz compinit && compinit
 fi
+
+# タブを一回押すと候補一覧を表示
+setopt auto_list
+# 続けてタブを押すと順番に補完
+setopt auto_menu
+
+## 補完システムと履歴からサジェストを取得する
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 
 # Load zshrc.local if exists
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
