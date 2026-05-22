@@ -24,10 +24,13 @@ cp main/tigrc ~/.tigrc
 cp main/tmuxconf ~/.tmux.conf
 
 # git-prompt, aliases, zprofile
-cp main/git-prompt.sh ~/.git-prompt.sh
-cp main/aliases ~/.aliases
-cp main/zprofile ~/.zprofile
-cp main/zshrc ~/.zshrc
+# git-prompt はファイルがなければコピーする
+[ -f ~/.git-prompt.sh ] || cp main/git-prompt.sh ~/.git-prompt.sh
+
+# zprofile, zshrc, aliases は差分があれば更新する
+[ -n "$(diff -q main/zprofile ~/.zprofile)" ] && cp main/zprofile ~/.zprofile
+[ -n "$(diff -q main/zshrc ~/.zshrc)" ] && cp main/zshrc ~/.zshrc
+[ -n "$(diff -q main/aliases ~/.aliases)" ] && cp main/aliases ~/.aliases
 
 # bin/
 [ -d ~/.bin ] || mkdir ~/.bin
