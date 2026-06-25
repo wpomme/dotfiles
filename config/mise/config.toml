@@ -1,4 +1,10 @@
 [tools]
+gh = "latest"
+fd = "latest"
+ripgrep = "latest"
+jq = "latest"
+fzf = "latest"
+zoxide = "latest"
 node = "lts"
 python = "latest"
 ruby = "4.0.2"

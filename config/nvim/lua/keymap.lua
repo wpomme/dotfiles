@@ -32,17 +32,6 @@ vim.keymap.set("i", '""', '""<LEFT>')
 vim.keymap.set("i", "''", "''<LEFT>")
 -- vim.keymap.set("i", "``", "``<LEFT>")
 
--- Ruby
-vim.api.nvim_create_augroup("filetype_ruby", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-  group = "filetype_ruby",
-  pattern = "ruby",
-  callback = function()
-    -- ブロックパラメーターのために使う
-    vim.keymap.set("i", "||", "||<Left>", { buffer = true })
-  end,
-})
-
 -- コマンドラインモード
 -- Emacs風
 -- <C-e>はVim, Emacsで共通

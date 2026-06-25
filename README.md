@@ -7,6 +7,9 @@ make
 bash apply.sh
 ```
 
+# dotfiles を配置した端末で独自の設定をする場合
+    - .zprofile.local, .zshrc.local を作成し、そこに設定を記載すること
+
 # 各レポジトリのフォルダ構成
 $HOME
 - dotfiles

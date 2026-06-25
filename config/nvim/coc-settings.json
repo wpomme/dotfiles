@@ -5,5 +5,14 @@
   "solargraph.completion": true,
   "solargraph.hover": true,
   "solargraph.definitions": true,
-  "coc.preferences.formatOnSaveFiletypes": ["ruby"]
+  "coc.preferences.formatOnSaveFiletypes": ["ruby"],
+  "languageserver": {
+    "rubocop": {
+      "command": "bundle",
+      "args" : ["exec", "rubocop", "--lsp", "-a"],
+      "filetypes": ["ruby"],
+      "rootPatterns": [".git", "Gemfile"],
+      "requireRootPattern": true
+    }
+  }
 }
