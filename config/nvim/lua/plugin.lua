@@ -14,7 +14,7 @@ require("jetpack.packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "airblade/vim-gitgutter"
   use "lepture/vim-jinja"
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  -- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use { "neoclide/coc.nvim", branch = "release" }
 end)
 

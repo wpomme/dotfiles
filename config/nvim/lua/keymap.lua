@@ -27,10 +27,12 @@ vim.keymap.set("i", "((", "()<ESC>i")
 vim.keymap.set("i", "(<Enter>", "()<Left><CR><ESC><S-o>")
 vim.keymap.set("i", "[[", "[]<ESC>i")
 vim.keymap.set("i", "[<Enter>", "[]<Left><CR><ESC><S-o>")
+-- TODO: .rb では無効にしたい
 vim.keymap.set("i", "<<", "<><ESC>i")
-vim.keymap.set("i", '""', '""<LEFT>')
-vim.keymap.set("i", "''", "''<LEFT>")
--- vim.keymap.set("i", "``", "``<LEFT>")
+vim.keymap.set("i", '""', '""<Left>')
+vim.keymap.set("i", "''", "''<Left>")
+-- TODO: .md では遅延してから読み込むようにできないか
+vim.keymap.set("i", "``", "``<Left>")
 
 -- コマンドラインモード
 -- Emacs風
