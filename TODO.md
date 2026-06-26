@@ -1,4 +1,6 @@
 # TODO
+- comment-out.lua を完成させる
+    - `n comment-out.lua`で編集して、`n -u comment-out.lua <react.jsx>` で確認するのがいい
 - mise でdotfile の管理ができる
     - https://mise.jdx.dev/dotfiles.html
 - dotfilesを適用した環境によって、さらに独自に設定できるようにする
