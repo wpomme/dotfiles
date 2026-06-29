@@ -90,3 +90,6 @@ alias gsd="git stash drop"
 
 ## git fix conflict
 alias vimdiff="git mergetool -t vimdiff"
+
+## ファイルのパスをコピー
+copypath() {realpath $1 | pbcopy}
