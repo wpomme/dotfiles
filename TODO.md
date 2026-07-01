@@ -27,3 +27,4 @@
     - 最も、neovim でも同様のことができるのだけれど...
 - ブックレットの作成
     - そのページのtitleとURLを取得してリンクとして貼り付けできるもの
+- Ruby: .rubocop.yml, .solargraph.yml をdotfiles に作成

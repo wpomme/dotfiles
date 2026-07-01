@@ -6,9 +6,26 @@ fi
 # Homebrew
 alias brew="/opt/homebrew/bin/brew"
 
+# Directory
+# cd すると自動でpushd する
+setopt autopushd
+
+# pushd に同じディレクトリを重複させない
+setopt pushdignoredups
+
 # Command History
 HISTSIZE=10000
 HISTFILESIZE=10000
+
+## Command History Fuzzy Search (Only Zsh)
+# コマンド履歴をfzf で検索する
+alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf"
+
+## 全体のコマンド履歴の数を表示
+alias fcc="fc -l 1 | wc -l"
+
+# 他のウィンドウとコマンド履歴を共有する
+setopt share_history
 
 ## 連続して繰り返し実行されたコマンドは、履歴に追加しない
 HISTCONTROL=ignoredups

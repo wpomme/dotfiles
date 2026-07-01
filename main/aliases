@@ -93,3 +93,7 @@ alias vimdiff="git mergetool -t vimdiff"
 
 ## ファイルのパスをコピー
 copypath() {realpath $1 | pbcopy}
+
+## Direcotory
+## popd されたディレクトリの一覧を見やすくする
+alias dirs="dirs -v"
