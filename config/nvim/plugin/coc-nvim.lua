@@ -1,3 +1,4 @@
+-- TODO: このファイルは読み込まれていない
 -- coc.nvim
 -- GoTo code navigation
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)", { silent = true })
