@@ -3,11 +3,12 @@
 # neovim
 [ -d ~/.config/nvim/lua/ ] || mkdir -p ~/.config/nvim/lua/
 [ -d ~/.config/nvim/ftplugin/ ] || mkdir -p ~/.config/nvim/ftplugin/
+[ -d ~/.config/nvim/plugin/ ] || mkdir -p ~/.config/nvim/plugin/
 
 cp config/nvim/init.lua ~/.config/nvim/
-cp config/nvim/coc-settings.json ~/.config/nvim/
 cp config/nvim/lua/*.lua ~/.config/nvim/lua/
 cp config/nvim/ftplugin/*.lua ~/.config/nvim/ftplugin/
+cp config/nvim/plugin/*.lua ~/.config/nvim/plugin/
 
 # ghostty
 [ -d ~/.config/ghostty/ ] || mkdir -p ~/.config/ghostty/

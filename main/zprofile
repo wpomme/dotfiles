@@ -21,9 +21,6 @@ eval "$(mise activate zsh)"
 # gcc
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
 
-# java
-export JAVA_HOME="$(/usr/libexec/java_home)"
-
 # zoxide
 eval "$(zoxide init zsh)"
 

@@ -30,7 +30,6 @@ setopt share_history
 ## 連続して繰り返し実行されたコマンドは、履歴に追加しない
 HISTCONTROL=ignoredups
 
-
 # Prompt
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;

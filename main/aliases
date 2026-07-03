@@ -17,6 +17,8 @@ case `uname` in
     alias ls='ls -GpF'
     alias ll='ls -alGpF'
     alias la="ls -aGpF"
+    ## ファイルのパスをコピー
+    copypath() {realpath $1 | pbcopy}
   ;;
   Linux)
     alias l='ls --color=auto'
@@ -54,10 +56,6 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias cl="clear"
 
-# Architecture
-alias arm="exec arch -arch arm64e /bin/zsh --login"
-alias x86="exec arch -arch x86_64 /bin/zsh --login"
-
 # Docker
 ## docker ps
 alias dps="docker ps"
@@ -78,9 +76,6 @@ alias gfc="git branch | fzf | xargs git switch"
 #### compare current branch with a given branch
 alias gfd='git branch | fzf | xargs -I {} git diff {} $(git branch --show-current)'
 
-## git commit with comment
-alias gcm="git commit -m"
-
 ## git stash
 alias gsh="git stash"
 alias gsl="git stash list"
@@ -90,9 +85,6 @@ alias gsd="git stash drop"
 
 ## git fix conflict
 alias vimdiff="git mergetool -t vimdiff"
-
-## ファイルのパスをコピー
-copypath() {realpath $1 | pbcopy}
 
 ## Direcotory
 ## popd されたディレクトリの一覧を見やすくする

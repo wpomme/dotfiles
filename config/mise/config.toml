@@ -1,10 +1,15 @@
 [tools]
-gh = "latest"
-fd = "latest"
-ripgrep = "latest"
-jq = "latest"
+# Use fzf.vim
 fzf = "latest"
+# bat = "latest"
+ripgrep = "latest"
+# ag = "latest"
+# Utils
+gh = "latest"
+jq = "latest"
 zoxide = "latest"
+fd = "latest"
+# Runtime
 node = "lts"
 python = "latest"
 ruby = "4.0.2"
