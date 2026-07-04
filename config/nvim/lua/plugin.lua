@@ -1,20 +1,18 @@
 vim.pack.add({
   {
-    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
-  },
-  {
     src = 'https://github.com/neoclide/coc.nvim',
     branch = 'release'
   },
+  {
+    src = "https://github.com/kylechui/nvim-surround",
+    version = vim.version.range("4.x"),
+  },
   'https://github.com/junegunn/fzf',
   'https://github.com/junegunn/fzf.vim',
-  'https://github.com/tpope/vim-surround',
   'https://github.com/tpope/vim-endwise',
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/airblade/vim-gitgutter',
   'https://github.com/vim-airline/vim-airline',
-  'https://github.com/neovim/nvim-lspconfig',
   {
     src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
     version = vim.version.range('3')
@@ -24,10 +22,6 @@ vim.pack.add({
   "https://github.com/MunifTanjim/nui.nvim",
   -- optional, but recommended
   "https://github.com/nvim-tree/nvim-web-devicons",
-})
-
-require('neo-tree').setup({
-  -- options go here
 })
 
 -- Filer
@@ -59,3 +53,6 @@ vim.keymap.set("n", "K", function()
     vim.api.nvim_feedkeys("K", "in", false)
   end
 end, { silent = true })
+
+-- 変数名や関数名をリネーム
+vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})

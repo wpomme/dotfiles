@@ -1,18 +1,18 @@
 # TODO
+    - * 個人的なTODO ばかり...
 - comment-out.lua を完成させる
     - `n comment-out.lua`で編集して、`n -u comment-out.lua <react.jsx>` で確認するのがいい
-- mise でdotfile の管理ができる
+- mise でdotfile の管理ができるらしい
     - https://mise.jdx.dev/dotfiles.html
 - dotfilesを適用した環境によって、さらに独自に設定できるようにする
     - mise.toml の運用も~/mise.local.toml があれば良さそう
 - aliasesを消していきたい
     - zsh-autosuggestions を使えば消せるはず
         - それに従って、自動補完のタブ補完を有効にする
+- neo-tree 導入 -> git status, git add はneovim 上でできるようにしたい
+    - できればgit staged にあるファイルのgit diff もほしい
+    - コマンド履歴の集計を見て、コマンドの回数が多かったものをneovim上でできるようにする
 - neovimのファイル更新やlinterのキャッシュ更新などを覚える
-- neovim のフォルダサイドバー問題
-    - 代替になるプラグインはないだろうか
-        - この機能が便利で他に移行できない...。
-    - neovimのnerd-treeのサイドバーを簡単に広げられるようにしたい
 - vimのkeymapをデフォルトに近づけたい
     - vim.keymap.set("i", "jk", "<ESC>") とかを辞めたい
 - apply.shの修正
@@ -22,11 +22,34 @@
         a. 元のファイルがない場合?
 - zprofile.local, zshrc.localの確認や表示、編集を行うコマンドが欲しい
 - git-prompt.sh をzsh に特化したものに変える 
-- CLI でリポジトリの関数について、その定義元を検索するコマンド
-    - git grep で関数を検索するとき、大体その定義元のファイル名が見たかったりするので
-    - 最も、neovim でも同様のことができるのだけれど...
 - ブックレットの作成
     - そのページのtitleとURLを取得してリンクとして貼り付けできるもの
 - 言語ごとに必要なファイルをdotfilesに作成しておく
     - Ruby: .rubocop.yml, .solargraph.yml をdotfiles に作成
     - また、個人開発ようにeditorconfigを用意する
+
+# 各レポジトリのフォルダ構成
+$HOME
+- dotfiles
+- memo-cli
+- exercise
+    - 家のPCだけ
++ .config
+    + ghostty
+    + mise
+    + nvim
+    - starship.toml
++ repo
+    - memorandum
+    - lang
+        - exerciseに移行する
+    - linux-dev-container
+        - そのうち片付ける
+    - my-records-for-sale
+    - mysql-dev-container
+        - そのうち片付ける
+    - rekordbox-utils
++ warehouse
+    - archives
+    - books
+    - packages

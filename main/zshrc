@@ -24,6 +24,9 @@ alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf"
 ## 全体のコマンド履歴の数を表示
 alias fcc="fc -l 1 | wc -l"
 
+## コマンド履歴の集計
+alias fcs="fc -ln 1 | sort | uniq -c | sort"
+
 # 他のウィンドウとコマンド履歴を共有する
 setopt share_history
 
