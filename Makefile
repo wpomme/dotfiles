@@ -1,1 +1,3 @@
-all:;	bash apply.sh
+all:; bash update.sh
+
+.PHONY: all

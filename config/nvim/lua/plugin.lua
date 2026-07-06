@@ -7,12 +7,20 @@ vim.pack.add({
     src = "https://github.com/kylechui/nvim-surround",
     version = vim.version.range("4.x"),
   },
+  {
+    src = 'https://github.com/romgrk/barbar.nvim',
+  },
+  -- dependencies for barbar.nvim
+  'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/nvim-tree/nvim-web-devicons',
+  -- fzf
   'https://github.com/junegunn/fzf',
   'https://github.com/junegunn/fzf.vim',
   'https://github.com/tpope/vim-endwise',
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/airblade/vim-gitgutter',
-  'https://github.com/vim-airline/vim-airline',
+  'https://github.com/nvim-lualine/lualine.nvim',
+  -- 'https://github.com/vim-airline/vim-airline',
   {
     src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
     version = vim.version.range('3')
@@ -26,7 +34,7 @@ vim.pack.add({
 
 -- Filer
 vim.keymap.set("n", "<Leader>y", ":Ex<CR>", { silent = true })
-vim.keymap.set("n", "<Leader>u", "<Cmd>Neotree<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>u", "<Cmd>Neotree toggle<CR>", { silent = true })
 
 -- Fzf
 vim.opt.rtp:append("~/.fzf")
