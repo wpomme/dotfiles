@@ -15,6 +15,7 @@
 - mise でdotfile の管理ができるらしい
     - https://mise.jdx.dev/dotfiles.html
 - dotfilesを適用した環境によって、さらに独自に設定できるようにする
+    - zprofile.localの対応。
     - mise.toml の運用も~/mise.local.toml があれば良さそう
 - aliasesを消していきたい
     - zsh-autosuggestions を使えば消せるはず
