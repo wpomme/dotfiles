@@ -9,5 +9,6 @@ fi
 DOTFILES_DIR=$1
 # dotfiles以下のファイルの先頭にドットを付けて、$HOMEディレクトリ以下にコピーする
 for DOTFILES in `find $DOTFILES_DIR -type f | xargs -I{} basename {}`; do
-  [ -n `diff -q $DOTFILES_DIR/$DOTFILES ~/.$DOTFILES` ] && cp $DOTFILES_DIR/$DOTFILES ~/.$DOTFILES
+  cp $DOTFILES_DIR/$DOTFILES ~/.$DOTFILES
+  ## [ -n `diff -q $DOTFILES_DIR/$DOTFILES ~/.$DOTFILES` ] && cp $DOTFILES_DIR/$DOTFILES ~/.$DOTFILES
 done
