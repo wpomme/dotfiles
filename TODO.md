@@ -9,6 +9,14 @@
     - mise
     - zoxide
     - fzf
+```bash
+## こんな感じのものを作成しておく
+if command -v mise &>/dev/null; then
+    eval "$(mise activate zsh)"
+else
+    echo "miseがインストールされていません。"
+fi
+```
 
 - comment-out.lua を完成させる
     - `n comment-out.lua`で編集して、`n -u comment-out.lua <react.jsx>` で確認するのがいい
@@ -35,6 +43,11 @@
         - それに従って、自動補完のタブ補完を有効にする
 - コマンド履歴
     - fcfで選択したコマンドを実行できるようにする。zshに渡せばOKだけど
+
+- barbar.nvim
+    - bufferが上の方に出てくるのが便利
+    - BufferPreviousなどKeymapを入れておく
+        - :bnで間に合う気がする
 - neo-tree 導入 -> git status, git add はneovim 上でできるようにしたい
     - tree-sitterの再導入を検討
     - できればgit staged にあるファイルのgit diff もほしい

@@ -38,6 +38,10 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+## load fzf-git.sh
+## Ref: https://github.com/junegunn/fzf-git.sh
+[ -f $HOME/.fzf-git.sh ] && source $HOME/.fzf-git.sh
+
 ## git-prompt
 source $HOME/.git-prompt.sh
 

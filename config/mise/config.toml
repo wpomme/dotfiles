@@ -1,7 +1,8 @@
 [tools]
 # Coreutils CLI Alternatives
 zoxide = "latest"
-fzf = "latest"
+# fzfはHomebrewでインストールする
+# fzf = "latest"
 ripgrep = "latest"
 bat = "latest"
 lsd = "latest"
