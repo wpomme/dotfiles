@@ -12,7 +12,8 @@ vim.pack.add({
   },
   -- dependencies for barbar.nvim
   'https://github.com/lewis6991/gitsigns.nvim',
-  'https://github.com/nvim-tree/nvim-web-devicons',
+  --  duplicate neo-tree dependencies
+  -- 'https://github.com/nvim-tree/nvim-web-devicons',
   -- fzf
   'https://github.com/junegunn/fzf',
   'https://github.com/junegunn/fzf.vim',

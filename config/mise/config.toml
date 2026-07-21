@@ -1,18 +1,21 @@
 [tools]
-# Use fzf.vim
+# Coreutils CLI Alternatives
+zoxide = "latest"
 fzf = "latest"
-# bat = "latest"
 ripgrep = "latest"
-# ag = "latest"
+bat = "latest"
+lsd = "latest"
+fd = "latest"
+
 # Utils
 gh = "latest"
 jq = "latest"
-zoxide = "latest"
-fd = "latest"
+
 # Runtime
 node = "lts"
 python = "latest"
 ruby = "4.0.2"
+# ghc = "latest"
 
 [settings]
 
