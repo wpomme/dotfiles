@@ -3,18 +3,12 @@
 - テストコードでactualとexpectedの位置をいつも間違えている気がする...
     - 一度整理したい
 
-# 重要！
-- モダンCLIとTUIの連携
-- fd, fzf, bat, lsdなどのモダンなCLIとneovim, git, zshとの連携
-    - その他、treeもインストールした
-    - ドキュメントを見なくても`fd . | fzf | bat` のようなものが思いつく
-        - これだとfzfで色が消えるけど
-    - integration refs:
-        - fd: https://github.com/sharkdp/fd#integration-with-other-programs
-
-- パッケージマネージャーの使い分け
-    - homebrewとmise、その他node系のツールでnpm or pnpm
-
+- 必要なパッケージを洗い出しておく
+    - zshがmac専用になってる
+    - homebrew(mac)
+    - mise
+    - zoxide
+    - fzf
 
 - comment-out.lua を完成させる
     - `n comment-out.lua`で編集して、`n -u comment-out.lua <react.jsx>` で確認するのがいい
@@ -56,26 +50,3 @@
     - そのページのtitleとURLを取得してリンクとして貼り付けできるもの
 - 言語ごとに必要なファイルをdotfilesに作成しておく
     - Ruby: .rubocop.yml, .solargraph.yml をdotfiles に作成
-
-# 各レポジトリのフォルダ構成
-$HOME
-- dotfiles
-+ .config
-    + ghostty
-    + mise
-    + nvim
-    - starship.toml
-+ repo
-    - memo-cli
-    - memorandum
-    - exercise
-    - lang
-        - exerciseに移行する
-        - gitlab で管理する
-    - my-records-for-sale
-    - mysql-dev-container
-    - rekordbox-utils
-+ warehouse
-    - archives
-    - books
-    - packages
