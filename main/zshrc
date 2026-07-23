@@ -19,7 +19,7 @@ HISTFILESIZE=10000
 
 ## Command History Fuzzy Search (Only Zsh)
 # コマンド履歴をfzf で検索する
-alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf"
+alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf | pbcopy"
 
 ## 全体のコマンド履歴の数を表示
 alias fcc="fc -l 1 | wc -l"
@@ -40,6 +40,7 @@ esac
 
 ## load fzf-git.sh
 ## Ref: https://github.com/junegunn/fzf-git.sh
+## CTRL-G CTRG-Bなどが使えそう
 [ -f $HOME/.fzf-git.sh ] && source $HOME/.fzf-git.sh
 
 ## git-prompt
