@@ -1,0 +1,14 @@
+#!/bin/sh
+# 進捗状況
+# 次のコマンドを打つと
+# make $(find main/ -type f | xargs -I{} basename {} | tr "\n" " " | awk '{ for(i = 1; i < NF; i++) { print "~/." $i } }')
+# 次の結果が返ってくるところまではできた
+# make: Nothing to be done for `/Users/hy/.git-prompt.sh'.
+# ...
+ECHO = echo
+MAIN_DOTFILES_DIR = main
+MAIN_DOTFILES = $(find $(MAIN_DOTFILES_DIR) -type f | xargs -I{} basename {} | tr "\n" " ")
+TARGET_DOTFILES = $(find $(MAIN_DOTFILES_DIR) -type f | xargs -I{} basename {} | tr "\n" " " | awk '{ for(i = 1; i < NF; i++) print "~/." $i }')
+
+$(TARGET_DOTFILES): $(MAIN_DOTFILES)
+	$(ECHO) $(TARGET_DOTFILES)

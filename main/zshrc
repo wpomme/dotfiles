@@ -18,8 +18,8 @@ HISTSIZE=10000
 HISTFILESIZE=10000
 
 ## Command History Fuzzy Search (Only Zsh)
-# コマンド履歴をfzf で検索する
-alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf | pbcopy"
+# コマンド履歴をfzf で検索して、必要なものをクリップボードに貼り付ける
+alias fcf="fc -ln 1 | sort | uniq | sort -r | fzf | tr -d '\n' | pbcopy"
 
 ## 全体のコマンド履歴の数を表示
 alias fcc="fc -l 1 | wc -l"
