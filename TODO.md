@@ -1,8 +1,4 @@
 # TODO
-    - * 個人的なTODO ばかり...
-- テストコードでactualとexpectedの位置をいつも間違えている気がする...
-    - 一度整理したい
-
 - 必要なパッケージを洗い出しておく
     - zshがmac専用になってる
     - homebrew(mac)
@@ -31,8 +27,6 @@ fi
     - ysやdsの後に行頭・行末に移動するとき、H, Lを使えるようにする
 - 現在のブランチを補完かコマンドで簡単に出せるようにする
 
-- mise でdotfile の管理ができるらしい
-    - https://mise.jdx.dev/dotfiles.html
 - dotfilesを適用した環境によって、さらに独自に設定できるようにする
     - zprofile.localの対応。
     - mise.toml の運用も~/mise.local.toml があれば良さそう
@@ -41,8 +35,6 @@ fi
 - aliasesを消していきたい
     - zsh-autosuggestions を使えば消せるはず
         - それに従って、自動補完のタブ補完を有効にする
-- コマンド履歴
-    - fcfで選択したコマンドを実行できるようにする。zshに渡せばOKだけど
 
 - barbar.nvim
     - bufferが上の方に出てくるのが便利
@@ -54,6 +46,7 @@ fi
     - コマンド履歴の集計を見て、コマンドの回数が多かったものをneovim上でできるようにする
     -> git add, git status, git restoreがneovim上で出来るとコマンド履歴が変わるはず
     - その他、git diffを見やすくするツールがほしい。これはターミナル上でもいい
+    - また、ターミナル上でgit status上のファイルの差分が見れるコマンドなど
 
 
 - neovimのファイル更新やlinterのキャッシュ更新などを覚える
@@ -61,5 +54,5 @@ fi
 - git-prompt.sh をzsh に特化したものに変える 
 - ブックレットの作成
     - そのページのtitleとURLを取得してリンクとして貼り付けできるもの
-- 言語ごとに必要なファイルをdotfilesに作成しておく
-    - Ruby: .rubocop.yml, .solargraph.yml をdotfiles に作成
+- .editorconfig, .rubocop.yml, .solargraph.ymlなどを保存する場所
+    - template/が良いだろうか？

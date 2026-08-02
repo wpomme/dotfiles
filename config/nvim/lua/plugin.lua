@@ -1,4 +1,5 @@
 vim.pack.add({
+  -- completion
   {
     src = 'https://github.com/neoclide/coc.nvim',
     branch = 'release'
@@ -7,13 +8,6 @@ vim.pack.add({
     src = "https://github.com/kylechui/nvim-surround",
     version = vim.version.range("4.x"),
   },
-  {
-    src = 'https://github.com/romgrk/barbar.nvim',
-  },
-  -- dependencies for barbar.nvim
-  'https://github.com/lewis6991/gitsigns.nvim',
-  --  duplicate neo-tree dependencies
-  -- 'https://github.com/nvim-tree/nvim-web-devicons',
   -- fzf
   'https://github.com/junegunn/fzf',
   'https://github.com/junegunn/fzf.vim',
@@ -21,7 +15,6 @@ vim.pack.add({
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/airblade/vim-gitgutter',
   'https://github.com/nvim-lualine/lualine.nvim',
-  -- 'https://github.com/vim-airline/vim-airline',
   {
     src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
     version = vim.version.range('3')
