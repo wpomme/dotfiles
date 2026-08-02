@@ -1,4 +1,6 @@
 require("basic")
 require("keymap")
+require("config.lazy")
+require("plugins.init")
+-- require("plugins/options")
 -- require("comment-out")
-require("plugin")

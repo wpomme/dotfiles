@@ -14,6 +14,10 @@ else
 fi
 ```
 
+- lazy.vimとtree-sitterを導入した
+    - :checkhealthで足りないものを補完していけば良さそう
+    - 各プラグインの設定を確認すること
+
 - comment-out.lua を完成させる
     - `n comment-out.lua`で編集して、`n -u comment-out.lua <react.jsx>` で確認するのがいい
     - プラグインでいいかも...
@@ -36,12 +40,7 @@ fi
     - zsh-autosuggestions を使えば消せるはず
         - それに従って、自動補完のタブ補完を有効にする
 
-- barbar.nvim
-    - bufferが上の方に出てくるのが便利
-    - BufferPreviousなどKeymapを入れておく
-        - :bnで間に合う気がする
 - neo-tree 導入 -> git status, git add はneovim 上でできるようにしたい
-    - tree-sitterの再導入を検討
     - できればgit staged にあるファイルのgit diff もほしい
     - コマンド履歴の集計を見て、コマンドの回数が多かったものをneovim上でできるようにする
     -> git add, git status, git restoreがneovim上で出来るとコマンド履歴が変わるはず

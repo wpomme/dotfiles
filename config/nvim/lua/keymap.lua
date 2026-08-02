@@ -11,6 +11,8 @@ vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>")
 vim.keymap.set("n", "<C-]>", "g<C-]>")
 -- <C-G>を二回打つとクリップボードにファイルパスを保存する
 vim.keymap.set("n", "<C-G><C-G>", "<C-G><Cmd>let @+ = expand('%')<CR>")
+-- built-in Filer
+vim.keymap.set("n", "<Leader>y", ":Ex<CR>", { silent = true })
 
 -- 挿入モード
 vim.keymap.set("i", "<C-]>", "<ESC>g<C-]>")

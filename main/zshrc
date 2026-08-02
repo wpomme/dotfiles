@@ -3,6 +3,9 @@ if [ -f "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
+# Neovim Runtime
+VIMRUNTIME=$(nvim --clean --headless --cmd 'echo $VIMRUNTIME' --cmd 'quit' 2>&1 | tail -1)
+
 # Homebrew
 alias brew="/opt/homebrew/bin/brew"
 
