@@ -26,6 +26,7 @@ return {
   },
   { -- optional cmp completion source for require statements and module annotations
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     opts = function(_, opts)
       opts.sources = opts.sources or {}
       table.insert(opts.sources, {
@@ -33,6 +34,10 @@ return {
         group_index = 0, -- set group index to 0 to skip loading LuaLS completions
       })
     end,
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+    },
   },
   {
     'saghen/blink.cmp',
@@ -44,7 +49,7 @@ return {
     build = function()
       -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
       -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-      require('blink.cmp').build():pwait(60000)
+      require('blink.cmp').build():pwait()
     end,
 
     ---@module 'blink.cmp'
@@ -98,36 +103,9 @@ return {
       vim.g.startuptime_tries = 10
     end,
   },
-
-  {
-    "hrsh7th/nvim-cmp",
-    -- load cmp on InsertEnter
-    event = "InsertEnter",
-    -- these dependencies will only be loaded when cmp loads
-    -- dependencies are always lazy-loaded unless specified otherwise
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-    },
-  },
-
   -- if some code requires a module from an unloaded plugin, it will be automatically loaded.
   -- So for api plugins like devicons, we can always set lazy=true
   { "nvim-tree/nvim-web-devicons", lazy = true },
-  {
-    "Wansmer/treesj",
-    keys = {
-      { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
-    },
-    opts = { use_default_keymaps = false, max_join_length = 150 },
-  },
-
-  {
-    "monaqa/dial.nvim",
-    -- lazy-load on keys
-    -- mode is `n` by default. For more advanced options, check the section on key mappings
-    keys = { "<C-a>", { "<C-x>", mode = "n" } },
-  },
 
   {
     "folke/noice.nvim",
@@ -158,7 +136,7 @@ return {
   },
   'https://github.com/junegunn/fzf',
   'https://github.com/junegunn/fzf.vim',
-  'https://github.com/tpope/vim-endwise',
+  -- 'https://github.com/tpope/vim-endwise',
   'https://github.com/tpope/vim-fugitive',
   {
       'nvim-lualine/lualine.nvim',
@@ -167,7 +145,39 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
-    build = ':TSUpdate'
+    build = ':TSUpdate',
+    opts = {
+      -- LazyVim config for treesitter
+      indent = { enable = true }, ---@type lazyvim.TSFeat
+      highlight = { enable = true }, ---@type lazyvim.TSFeat
+      folds = { enable = true }, ---@type lazyvim.TSFeat
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "printf",
+        "python",
+        "query",
+        "regex",
+        "ruby",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+      },
+    },
   },
   {
     {

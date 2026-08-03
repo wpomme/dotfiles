@@ -2,18 +2,19 @@
 export ARCH=`uname -m`
 
 # ENV Variables for PATH
-export USR=/usr/local/bin
+USR=/usr/local/bin
 export BREW=/opt/homebrew
 
-export MYCMD=$HOME/.bin
-export BREWBIN=$BREW/bin
-export BREWSBIN=$BREW/sbin
+MYCMD=$HOME/.bin
+LOCAL_BIN=$HOME/.local/bin
+export BREW_BIN=$BREW/bin
+export BREW_SBIN=$BREW/sbin
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # PATH
-PATH="$USR:$MYCMD:$BREWBIN:$BREWSBIN:$PATH"
+PATH="$USR:$MYCMD:$LOCAL_BIN:$BREW_BIN:$BREW_SBIN:$PATH"
 
 # mise
 eval "$(mise activate zsh)"

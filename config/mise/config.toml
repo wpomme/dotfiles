@@ -1,21 +1,9 @@
 [tools]
-# Coreutils CLI Alternatives
-zoxide = "latest"
-# fzfはHomebrewでインストールする
-# fzf = "latest"
-ripgrep = "latest"
-bat = "latest"
-lsd = "latest"
-fd = "latest"
-
-# Utils
-gh = "latest"
-jq = "latest"
-
 # Runtime
 node = "lts"
 python = "latest"
 ruby = "4.0.2"
+perl = "latest"
 # ghc = "latest"
 
 [settings]
