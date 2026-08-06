@@ -1,12 +1,9 @@
 # CPU Architecture
+# もう使わないかも
 export ARCH=`uname -m`
 
 # ENV Variables for PATH
-USR=/usr/local/bin
 export BREW=/opt/homebrew
-
-MYCMD=$HOME/.bin
-LOCAL_BIN=$HOME/.local/bin
 export BREW_BIN=$BREW/bin
 export BREW_SBIN=$BREW/sbin
 
@@ -14,13 +11,13 @@ export BREW_SBIN=$BREW/sbin
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # PATH
-PATH="$USR:$MYCMD:$LOCAL_BIN:$BREW_BIN:$BREW_SBIN:$PATH"
-
-# mise
-eval "$(mise activate zsh)"
+PATH="$BREW_BIN:$BREW_SBIN:$PATH"
 
 # gcc
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+
+# mise
+eval "$(mise activate zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
