@@ -9,7 +9,6 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
-## 個人的にMarkdownファイルでもwhitespaceを使わないため設定
 trim_trailing_whitespace = true
 
 # Matches multiple files with brace expansion notation
@@ -22,26 +21,11 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-# YAML: 2 space indentation (プロジェクトの設定による)
-[*.{yaml,yml}]
-indent_style = space
-indent_size = 2
-
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
 
-# TODO:
-# .editorconfigの設定を除外したい場合
-# [/vendor/**]
-# trim_trailing_whitespace = true
-
-# Indentation override for all JS under lib directory
-# [lib/**.js]
-# indent_style = space
-# indent_size = 2
-
-# Matches the exact files either package.json or .travis.yml
-# [{package.json,.travis.yml}]
-# indent_style = space
-# indent_size = 2
+# YAML: 2 space indentation (プロジェクトの設定による)
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2

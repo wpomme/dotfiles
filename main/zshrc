@@ -58,9 +58,6 @@ precmd() {
     __git_ps1 %n@${ARCH}$%~ '%# ' ' (%s)'
 }
 
-## Starship
-[ -f ~/.config/starship.toml ] && eval "$(starship init zsh)"
-
 # 補完系
 # zsh-completions
 if type brew &>/dev/null; then

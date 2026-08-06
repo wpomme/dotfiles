@@ -1,8 +1,0 @@
-#! /bin/sh
-CONTAINER_ID=$(docker ps -aq)
-
-for ID in $CONTAINER_ID
-do
-    docker stop $ID
-    docker rm $ID
-done

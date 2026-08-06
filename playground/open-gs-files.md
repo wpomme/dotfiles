@@ -1,4 +1,4 @@
-## todo.md: 作成中のスクリプト
+## staged filesとUntracked filesの中身を確認したい
 
 ```bash
 ## 変更を加えたstagedファイルの差分をみたい
