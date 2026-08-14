@@ -6,12 +6,13 @@ export ARCH=`uname -m`
 export BREW=/opt/homebrew
 export BREW_BIN=$BREW/bin
 export BREW_SBIN=$BREW/sbin
+LOCAL_BIN=$HOME/.local/bin
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # PATH
-PATH="$BREW_BIN:$BREW_SBIN:$PATH"
+PATH="$BREW_BIN:$BREW_SBIN:$LOCAL_BIN:$PATH"
 
 # gcc
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"

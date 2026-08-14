@@ -175,6 +175,8 @@ return {
           },
           -- Ruby Settings
           ruby_lsp = {},
+          -- Typescript Settings
+          ts_ls = {},
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
@@ -202,7 +204,9 @@ return {
           map("i", "<c-k>", vim.lsp.buf.signature_help, "Signature Help")
           map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, "Code Action")
           map("n", "<leader>cc", vim.lsp.codelens.run, "Run Codelens")
-          map("n", "<leader>cC", vim.lsp.codelens.refresh, "Refresh & Display Codelens")
+          map("n", "<leader>cC", function()
+            vim.lsp.codelens.enable(true, { bufnr = 0 })
+          end, "Refresh & Display Codelens")
           map("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
         end,
       })
@@ -276,6 +280,25 @@ return {
     opts = { ensure_installed = { "erb-formatter", "erb-lint" } },
   },
   {
+    "nvim-mini/mini.icons",
+    lazy = true,
+    opts = {
+      file = {
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+      },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
+      },
+    },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
+  },
+  {
     "dstein64/vim-startuptime",
     -- lazy-load on a command
     cmd = "StartupTime",
@@ -329,9 +352,9 @@ return {
     build = ':TSUpdate',
     opts = {
       -- LazyVim config for treesitter
-      indent = { enable = true }, ---@type lazyvim.TSFeat
-      highlight = { enable = true }, ---@type lazyvim.TSFeat
-      folds = { enable = true }, ---@type lazyvim.TSFeat
+      indent = { enable = true },
+      highlight = { enable = true },
+      folds = { enable = true },
       ensure_installed = {
         "bash",
         "c",

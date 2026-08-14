@@ -11,7 +11,9 @@ git status -s | grep '^M' | awk '{ print $2 }' | xargs -I{} nvim {}
 nvim $(git status -s | grep '^M' | awk '{ print $2 }')
 
 ## Untracked filesの中身を確認したい
+## TODO Untracked directoriesの中のファイルも見たい
 ## TODO: 本当は'??'にマッチさせたい
+## NOTE: batではなくneovimに渡すのもいい
 ## grep '^\?\?'だと全ての行を拾ってしまう
 git status -s | grep '^\?' | awk '{ print $2 }' | xargs -I{} bat {}
 ```

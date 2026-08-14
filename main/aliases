@@ -30,7 +30,6 @@ esac
 
 ## cd
 alias c="cd"
-alias ch="cd ~"
 alias cx="cd .."
 alias cxx="cd ../.."
 alias cxxx="cd ../../.."
@@ -47,7 +46,6 @@ alias n="nvim"
 alias ipe="curl ipinfo.io/ip"
 alias tenki="curl v2.wttr.in"
 alias jdate="TZ=JST+15 date"
-alias showpath='echo $PATH | tr : "\n"'
 alias serveit="python -m SimpleHTTPServer"
 
 ## interactive option
