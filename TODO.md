@@ -20,3 +20,4 @@
 
 - git status, git add, git restoreをneovim上で行えるようにする
     - その他、git diffを見やすくするツールも欲しい
+    - lazygitがとても良さそう

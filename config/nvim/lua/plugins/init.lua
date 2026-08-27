@@ -94,35 +94,29 @@ return {
     },
   },
   {
-    "nvim-neorg/neorg",
-    -- lazy-load on filetype
-    ft = "norg",
-    -- options for neorg. This will automatically call `require("neorg").setup(opts)`
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-      },
-    },
-  },
-  {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "mason.nvim",
       { "mason-org/mason-lspconfig.nvim", config = function() end },
     },
-    opts = function()
+    opts = function(_, opts)
       local ret = {
         -- options for vim.diagnostic.config()
         ---@type vim.diagnostic.Opts
         diagnostics = {
           underline = true,
           update_in_insert = false,
-          virtual_text = {
+          -- virtual_text = false,
+            virtual_text = {
             spacing = 4,
             source = "if_many",
             prefix = "●",
           },
+          -- float = {
+          --   border = "rounded",
+          --   source = true,
+          -- },
           severity_sort = true,
         },
         -- Enable this to enable the builtin LSP inlay hints on Neovim.
@@ -177,6 +171,8 @@ return {
           ruby_lsp = {},
           -- Typescript Settings
           ts_ls = {},
+          -- astro Settings
+          astro = {},
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
@@ -228,6 +224,12 @@ return {
       end
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
+
+      -- Show line diagnostics automatically in hover window
+      -- Ref: https://stackoverflow.com/questions/69290794/nvim-lsp-change-lspconfig-diagnostic-message-location
+      -- 250msカーソルを止めるとdiagnostic.open_floatが動作する
+      vim.o.updatetime = 250
+      vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
       if opts.servers["*"] then
         vim.lsp.config("*", opts.servers["*"])
@@ -292,10 +294,8 @@ return {
       },
     },
     init = function()
-      package.preload["nvim-web-devicons"] = function()
-        require("mini.icons").mock_nvim_web_devicons()
-        return package.loaded["nvim-web-devicons"]
-      end
+      require("mini.icons").mock_nvim_web_devicons()
+      return package.loaded["nvim-web-devicons"]
     end,
   },
   {
@@ -316,6 +316,13 @@ return {
     event = "VeryLazy",
     opts = {
       -- add any options here
+        messages = {
+          view = "notify", -- default view for messages
+          view_error = "notify", -- view for errors
+          view_warn = "notify", -- view for warnings
+          view_history = "messages", -- view for :messages
+          view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+        },
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -356,8 +363,10 @@ return {
       highlight = { enable = true },
       folds = { enable = true },
       ensure_installed = {
+        "astro",
         "bash",
         "c",
+        "css",
         "diff",
         "html",
         "javascript",
