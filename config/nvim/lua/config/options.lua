@@ -1,3 +1,4 @@
--- lazy.nvim が自動でloadするファイル
--- Fzf
-vim.opt.rtp:append("~/.fzf")
+-- telescope.nvim
+-- In case you don't want to use `:LazyExtras`,
+-- then you need to set the option below.
+vim.g.lazyvim_picker = "telescope"

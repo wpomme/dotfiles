@@ -2,6 +2,9 @@
 ## ターミナル
 - 現在のブランチを補完かコマンドで簡単に出せるようにする
 
+## Makefile
+- `Make build`コマンドを作成する
+
 ## dotifiles
 - aliasesを消していきたい
     - zsh-autosuggestionsを使えば消せるはず
@@ -14,10 +17,3 @@
     - それぞれのkeymapにdescを記入する
     - vimのkeymapをデフォルトに近づけたい
         - vim.keymap.set("i", "jk", "<ESC>") とかを辞めたい
-
-- nvim-surround
-    - ysやdsの後に行頭・行末に移動するとき、H, Lを使えるようにする
-
-- git status, git add, git restoreをneovim上で行えるようにする
-    - その他、git diffを見やすくするツールも欲しい
-    - lazygitがとても良さそう

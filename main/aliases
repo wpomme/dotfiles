@@ -59,13 +59,11 @@ alias cl="clear"
 alias dps="docker ps"
 
 # Git
-## add, status
+## add, status, branch, checkout, diff, etc...
 alias ga="git add"
 alias gs="git status"
-
-## branch, checkout, diff, etc...
 alias gb="git branch"
-alias gc="git checkout"
+alias gr="git restore"
 alias gd="git diff"
 
 ### git fuzzy checkout, git fuzzy diff

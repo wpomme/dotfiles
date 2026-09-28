@@ -33,3 +33,18 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- telescope.nvim
+local builtin = require('telescope.builtin')
+-- find
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+-- git
+vim.keymap.set('n', '<leader>gs', "<cmd>Telescope git_status<CR>", { desc = 'git status' })
+-- search
+vim.keymap.set('n', '<leader>sa', "<cmd>Telescope autocommands<cr>", { desc = 'Auto Commands' })
+vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>sch', builtin.command_history, { desc = 'Command History' })
+vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Key Maps' })
