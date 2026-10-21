@@ -2,7 +2,7 @@
 # Runtime
 node = { version = "latest", install_env = { CFLAGS = "-O2" } }
 python = "latest"
-ruby = "4.0.2"
+ruby = "4.0.7"
 perl = "latest"
 lua = "5.1"
 
