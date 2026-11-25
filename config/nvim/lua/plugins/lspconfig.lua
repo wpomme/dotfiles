@@ -76,19 +76,30 @@ return {
               },
             },
           },
-          -- Ruby Settings
+          -- Ruby
           ruby_lsp = {},
-          -- Typescript Settings
+          -- Typescript
           ts_ls = {},
-          -- astro Settings
+          -- astro
           astro = {},
-          -- golang Settings
+          -- golang
           gopls = {},
+          -- java
+          jdtls = {},
+          -- Markdown
+          marksman = {},
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
         ---@type table<string, fun(server:string, opts: vim.lsp.Config):boolean?>
-        setup = {},
+        setup = {
+          jdtls = function()
+            return true -- avoid duplicate servers
+          end,
+          hls = function()
+            return true
+          end,
+        },
       }
       return ret
     end,

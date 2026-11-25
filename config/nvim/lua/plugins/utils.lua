@@ -20,13 +20,13 @@ return {
     -- end
   },
   {
-      'nvim-lualine/lualine.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
-      optional = true,
-      opts = function(_, opts)
-        if not vim.g.trouble_lualine then
-          table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
-        end
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    optional = true,
+    opts = function(_, opts)
+      if not vim.g.trouble_lualine then
+        table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
       end
+    end
   },
 }

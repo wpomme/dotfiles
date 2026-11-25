@@ -59,6 +59,6 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "erb-formatter", "erb-lint" } },
+    opts = { ensure_installed = { "erb-formatter", "erb-lint", "solargraph", "haskell-language-server" } },
   },
 }
