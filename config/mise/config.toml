@@ -5,6 +5,7 @@ python = "latest"
 ruby = "4.0.7"
 perl = "latest"
 lua = "5.1"
+java = "27"
 
 [settings]
 

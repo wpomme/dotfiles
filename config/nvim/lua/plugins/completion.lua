@@ -59,6 +59,14 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "erb-formatter", "erb-lint", "solargraph", "haskell-language-server" } },
+    opts = { ensure_installed = { "erb-formatter", "erb-lint", "solargraph", "haskell-language-server", "java-debug-adapter", "java-test" } },
   },
+  {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {},
+      dependencies = {
+          { "mason-org/mason.nvim", opts = {} },
+          "neovim/nvim-lspconfig",
+      },
+  }
 }

@@ -39,7 +39,7 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
-      -- add any options here
+        -- add any options here
         messages = {
           view = "notify", -- default view for messages
           view_error = "notify", -- view for errors
